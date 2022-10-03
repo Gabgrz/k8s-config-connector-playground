@@ -1,2 +1,2 @@
-# config-connector
+# Config Connector
 Config Connector files
