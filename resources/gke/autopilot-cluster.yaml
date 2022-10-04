@@ -1,10 +1,10 @@
 apiVersion: container.cnrm.cloud.google.com/v1beta1
 kind: ContainerCluster
 metadata:
-    annotations:
-      cnrm.cloud.google.com/project-id: dev-workloads-01
-    labels:
-      environment:dev
+  annotations:
+    cnrm.cloud.google.com/project-id: dev-workloads-01
+  labels:
+    environment:dev
   name: containercluster-sample-autopilot
 spec:
   description: An autopilot cluster.
