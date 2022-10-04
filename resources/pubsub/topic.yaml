@@ -4,5 +4,5 @@
     annotations:
       cnrm.cloud.google.com/project-id: dev-workloads-01
     labels:
-      environment:production
+      environment:dev
     name: cool-topic
