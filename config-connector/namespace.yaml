@@ -1,6 +1,4 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  annotations:
-    cnrm.cloud.google.com/project-id: massive-pen-364122
   name: config-connector
