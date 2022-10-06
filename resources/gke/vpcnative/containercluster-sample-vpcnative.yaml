@@ -37,7 +37,7 @@ spec:
   podSecurityPolicyConfig:
     enabled: false
   verticalPodAutoscaling:
-    false: true
+    enabled: false
   privateClusterConfig:
     enablePrivateEndpoint: true
     enablePrivateNodes: true
