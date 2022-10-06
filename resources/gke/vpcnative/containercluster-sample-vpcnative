@@ -1,0 +1,64 @@
+apiVersion: container.cnrm.cloud.google.com/v1beta1
+kind: ContainerCluster
+metadata:
+  labels:
+    availability: high
+    target-audience: development
+  name: containercluster-sample-vpcnative
+spec:
+  description: An autopilot regional VPC-native cluster set up with special networking considerations.
+  enableAutopilot: true  
+  location: us-central1
+  releaseChannel:
+    channel: REGULAR  
+  networkingMode: VPC_NATIVE
+  networkRef:
+    name: containercluster-dep-vpcnative
+  subnetworkRef:
+    name: containercluster-dep-vpcnative
+  ipAllocationPolicy:
+    servicesSecondaryRangeName: servicesrange
+    clusterSecondaryRangeName: clusterrange
+  maintenancePolicy:
+    dailyMaintenanceWindow:
+      startTime: 00:00
+  #enableBinaryAuthorization: true
+  #enableIntranodeVisibility: true
+  #enableShieldedNodes: true
+  addonsConfig:
+    networkPolicyConfig:
+      disabled: true
+    dnsCacheConfig:
+      enabled: true
+    configConnectorConfig:
+      enabled: true
+  networkPolicy:
+    enabled: false
+  podSecurityPolicyConfig:
+    enabled: false
+  verticalPodAutoscaling:
+    false: true
+---
+apiVersion: compute.cnrm.cloud.google.com/v1beta1
+kind: ComputeNetwork
+metadata:
+  name: containercluster-dep-vpcnative
+spec:
+  routingMode: REGIONAL
+  autoCreateSubnetworks: false
+---
+apiVersion: compute.cnrm.cloud.google.com/v1beta1
+kind: ComputeSubnetwork
+metadata:
+  name: containercluster-dep-vpcnative
+spec:
+  ipCidrRange: 10.2.0.0/16
+  region: us-central1
+  networkRef:
+    name: containercluster-dep-vpcnative
+  secondaryIpRange:
+  - rangeName: servicesrange
+    ipCidrRange: 10.3.0.0/16
+  - rangeName: clusterrange
+    ipCidrRange: 10.4.0.0/16
+---
