@@ -1,0 +1,50 @@
+apiVersion: compute.cnrm.cloud.google.com/v1beta1
+kind: ComputeInstance
+metadata:
+  annotations:
+    cnrm.cloud.google.com/allow-stopping-for-update: "true"
+  name: computeinstance-sample-networkipref
+  labels:
+    label-one: "value-one"
+spec:
+  description: an basic instance example
+  machineType: n1-standard-1
+  zone: us-central1-a
+  bootDisk:
+    sourceDiskRef:
+      name: computeinstance-dep1-networkipref
+    autoDelete: false
+  serviceAccount:
+    serviceAccountRef:
+      name: inst-dep-networkipref
+    scopes:
+    - cloud-platform  
+    networkInterface:
+    - networkRef:
+        name: containercluster-dep-vpcnative
+      subnetworkRef:
+        name: containercluster-dep-vpcnative
+  metadataStartupScript: "echo hi > /test.txt"
+  metadata:
+  - key: foo
+    value: bar
+  - key: bar
+    value: baz
+  scheduling:
+    preemptible: false
+    automaticRestart: true
+    onHostMaintenance: MIGRATE
+---
+apiVersion: compute.cnrm.cloud.google.com/v1beta1
+kind: ComputeDisk
+metadata:
+  name: computeinstance-dep1-networkipref
+spec:
+  location: us-central1-a
+  imageRef:
+    external: debian-cloud/debian-11    
+---
+apiVersion: iam.cnrm.cloud.google.com/v1beta1
+kind: IAMServiceAccount
+metadata:
+  name: inst-dep-networkipref
