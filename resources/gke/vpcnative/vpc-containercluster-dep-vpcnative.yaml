@@ -1,6 +1,7 @@
 apiVersion: compute.cnrm.cloud.google.com/v1beta1
 kind: ComputeNetwork
 metadata:
+  cnrm.cloud.google.com/project-id: dev-workloads-01
   name: containercluster-dep-vpcnative
 spec:
   routingMode: REGIONAL
