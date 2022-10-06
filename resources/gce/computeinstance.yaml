@@ -20,11 +20,11 @@ spec:
       name: inst-dep-networkipref
     scopes:
     - cloud-platform  
-    networkInterface:
-    - networkRef:
-        name: containercluster-dep-vpcnative
-    - subnetworkRef:
-        name: containercluster-dep-vpcnative
+  networkInterface:
+  - networkRef:
+      name: containercluster-dep-vpcnative
+  - subnetworkRef:
+      name: containercluster-dep-vpcnative
   metadataStartupScript: "echo hi > /test.txt"
   metadata:
   - key: foo
