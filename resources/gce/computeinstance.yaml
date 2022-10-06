@@ -22,10 +22,11 @@ spec:
     - cloud-platform  
   networkInterface:
   - subnetworkRef:
-      name: containercluster-dep-vpcnative
-  - networkIp:
-      kind: ComputeAddress
-      name: computeinstance-dep-networkipref    
+      name: containercluster-dep-vpcnative 
+    networkIp: "10.2.0.4"
+    accessConfig:
+      - natIpRef:
+          name: containercluster-dep-vpcnative
   metadataStartupScript: "echo hi > /test.txt"
   metadata:
   - key: foo
@@ -76,7 +77,7 @@ spec:
 apiVersion: compute.cnrm.cloud.google.com/v1beta1
 kind: ComputeAddress
 metadata:
-  name: computeinstance-dep-networkipref
+  name: containercluster-dep-vpcnative
   annotations: 
     cnrm.cloud.google.com/project-id: dev-workloads-01  
 spec:
@@ -84,3 +85,11 @@ spec:
   location: us-central1
   addressType: EXTERNAL
   purpose: GCE_ENDPOINT
+---
+apiVersion: compute.cnrm.cloud.google.com/v1beta1
+kind: ComputeAddress
+metadata:
+  name: containercluster-dep-vpcnative
+spec:
+  description: a sample external address
+  location: us-central1
