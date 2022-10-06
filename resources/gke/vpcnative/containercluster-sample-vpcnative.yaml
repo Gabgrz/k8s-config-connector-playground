@@ -32,14 +32,12 @@ spec:
       disabled: true
     dnsCacheConfig:
       enabled: true
-    configConnectorConfig:
-      enabled: true
   networkPolicy:
     enabled: false
   podSecurityPolicyConfig:
     enabled: false
   verticalPodAutoscaling:
-    enabled: false
+    enabled: true
   privateClusterConfig:
     enablePrivateEndpoint: true
     enablePrivateNodes: true
