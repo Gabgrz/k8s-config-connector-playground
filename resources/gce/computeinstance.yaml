@@ -21,9 +21,9 @@ spec:
     scopes:
     - cloud-platform  
   networkInterface:
-  - subnetworkRef:
+  - networkRef:
       name: containercluster-dep-vpcnative
-  - networkIpRef:
+    networkIpRef:
       kind: ComputeAddress
       name: computeinstance-dep-networkipref      
   metadataStartupScript: "echo hi > /test.txt"
