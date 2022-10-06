@@ -45,4 +45,4 @@ spec:
   masterAuthorizedNetworksConfig:
     cidrBlocks:
       - displayName: Trusted external network
-        cidrBlock: 0.0.0.0/0
+        cidrBlock: 10.183.32.0/19
