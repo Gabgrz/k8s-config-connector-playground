@@ -23,7 +23,7 @@ spec:
   networkInterface:
   - subnetworkRef:
       name: containercluster-dep-vpcnative
-    networkIpRef:
+  - networkIpRef:
       kind: ComputeAddress
       name: computeinstance-dep-networkipref      
   metadataStartupScript: "echo hi > /test.txt"
