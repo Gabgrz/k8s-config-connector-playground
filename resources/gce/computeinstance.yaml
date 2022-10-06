@@ -23,6 +23,9 @@ spec:
   networkInterface:
   - subnetworkRef:
       name: containercluster-dep-vpcnative
+    networkIpRef:
+      kind: ComputeAddress
+      name: computeinstance-dep-networkipref      
   metadataStartupScript: "echo hi > /test.txt"
   metadata:
   - key: foo
@@ -69,3 +72,15 @@ spec:
        - "1000-2000"       
   networkRef:
     name: containercluster-dep-vpcnative
+---
+apiVersion: compute.cnrm.cloud.google.com/v1beta1
+kind: ComputeAddress
+metadata:
+  name: computeinstance-dep-networkipref
+  annotations: 
+    cnrm.cloud.google.com/project-id: dev-workloads-01  
+spec:
+  description: a external address for the test compute instance
+  location: us-central1
+  addressType: INTERNAL
+  purpose: GCE_ENDPOINT
