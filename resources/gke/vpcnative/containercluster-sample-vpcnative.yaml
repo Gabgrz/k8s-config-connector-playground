@@ -46,3 +46,13 @@ spec:
     cidrBlocks:
       - displayName: Trusted external network
         cidrBlock: 10.2.0.0/16
+  clusterAutoscaling:
+    enabled: true
+    autoscalingProfile: BALANCED
+    resourceLimits:
+    - resourceType: cpu
+      maximum: 10000
+      minimum: 10
+    - resourceType: memory
+      maximum: 10000
+      minimum: 100
