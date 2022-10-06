@@ -21,7 +21,7 @@ spec:
     scopes:
     - cloud-platform  
   networkInterface:
-  - networkRef:
+    subnetworkRef:
       name: containercluster-dep-vpcnative
     networkIpRef:
       kind: ComputeAddress
