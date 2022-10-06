@@ -42,3 +42,7 @@ spec:
     enablePrivateEndpoint: true
     enablePrivateNodes: true
     masterIpv4CidrBlock: "10.178.213.0/28"
+  masterAuthorizedNetworksConfig:
+    cidrBlocks:
+      - displayName: Trusted external network
+        cidrBlock: 10.2.0.0/16
