@@ -38,6 +38,10 @@ spec:
     enabled: false
   verticalPodAutoscaling:
     false: true
+  privateClusterConfig:
+    enablePrivateEndpoint: true
+    enablePrivateNodes: true
+    masterIpv4CidrBlock: "10.178.213.0/28"
 ---
 apiVersion: compute.cnrm.cloud.google.com/v1beta1
 kind: ComputeNetwork
