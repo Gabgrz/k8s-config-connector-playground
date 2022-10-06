@@ -26,7 +26,7 @@ spec:
     networkIp: "10.2.0.4"
     accessConfig:
       - natIpRef:
-          name: containercluster-dep-vpcnative
+          external: "34.135.46.193"
   metadataStartupScript: "echo hi > /test.txt"
   metadata:
   - key: foo
@@ -47,7 +47,7 @@ metadata:
 spec:
   location: us-central1-a
   imageRef:
-    external: debian-cloud/debian-11    
+    external: debian-cloud/debian-11
 ---
 apiVersion: iam.cnrm.cloud.google.com/v1beta1
 kind: IAMServiceAccount
