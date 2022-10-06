@@ -65,5 +65,7 @@ spec:
     - protocol: tcp
       ports:
        - "22"
+       - "80"
+       - "1000-2000"       
   networkRef:
     name: containercluster-dep-vpcnative
