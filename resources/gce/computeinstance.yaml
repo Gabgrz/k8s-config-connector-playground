@@ -39,7 +39,8 @@ spec:
 apiVersion: compute.cnrm.cloud.google.com/v1beta1
 kind: ComputeDisk
 metadata:
-  annotations: cnrm.cloud.google.com/project-id: dev-workloads-01
+  annotations: 
+    cnrm.cloud.google.com/project-id: dev-workloads-01
   name: computeinstance-dep1-networkipref
 spec:
   location: us-central1-a
@@ -49,5 +50,6 @@ spec:
 apiVersion: iam.cnrm.cloud.google.com/v1beta1
 kind: IAMServiceAccount
 metadata:
-  annotations: cnrm.cloud.google.com/project-id: dev-workloads-01
+  annotations: 
+    cnrm.cloud.google.com/project-id: dev-workloads-01
   name: inst-dep-networkipref
