@@ -51,8 +51,8 @@ spec:
     autoscalingProfile: BALANCED
     resourceLimits:
     - resourceType: cpu
-      maximum: 10000
+      maximum: 1000000000
       minimum: 10
     - resourceType: memory
-      maximum: 10000
+      maximum: 1000000000
       minimum: 100
