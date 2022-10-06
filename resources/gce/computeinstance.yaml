@@ -21,9 +21,9 @@ spec:
     scopes:
     - cloud-platform  
     networkInterface:
-      networkRef:
+    - networkRef:
         name: containercluster-dep-vpcnative
-      subnetworkRef:
+    - subnetworkRef:
         name: containercluster-dep-vpcnative
   metadataStartupScript: "echo hi > /test.txt"
   metadata:
