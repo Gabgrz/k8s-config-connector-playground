@@ -65,4 +65,3 @@ spec:
     ipCidrRange: 10.3.0.0/16
   - rangeName: clusterrange
     ipCidrRange: 10.4.0.0/16
----
