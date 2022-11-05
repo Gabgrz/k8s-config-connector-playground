@@ -1,0 +1,8 @@
+apiVersion: gcp.crossplane.io/v1beta1
+kind: ProviderConfig
+metadata:
+  name: default
+spec:
+  projectID: tenant-a-367720
+  credentials:
+    source: InjectedIdentity
