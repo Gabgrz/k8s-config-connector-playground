@@ -3,8 +3,6 @@ kind: IAMServiceAccount
 metadata:
   #annotations:
     #cnrm.cloud.google.com/project-id: hallowed-object-367706
-  labels:
-    label-one: "KCC Service Account"
   name: config-connector
 spec:
   displayName: Service Account for Config Connector
