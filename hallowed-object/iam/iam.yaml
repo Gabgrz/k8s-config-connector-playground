@@ -1,0 +1,8 @@
+apiVersion: iam.cnrm.cloud.google.com/v1beta1
+kind: IAMServiceAccount
+metadata:
+  labels:
+    label-one: "KCC Service Account"
+  name: config-connector
+spec:
+  displayName: Service Account for Config Connector
