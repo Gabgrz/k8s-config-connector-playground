@@ -20,5 +20,3 @@ spec:
           version: "34.5.1"
   writeConnectionSecretToRef:
     name: cluster-conn
-  providerConfigRef:
-    name: default    
