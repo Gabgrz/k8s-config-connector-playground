@@ -1,0 +1,117 @@
+---
+apiVersion: container.cnrm.cloud.google.com/v1beta1
+kind: ContainerCluster
+metadata:
+  annotations:
+    cnrm.cloud.google.com/project-id: tenant-b-368823
+  name: dev-cluster
+spec:
+
+  # The configuration for addons supported by GKE.
+  addonsConfig:
+    cloudrunConfig:
+      disabled: true
+      loadBalancerType: LOAD_BALANCER_TYPE_INTERNAL
+    configConnectorConfig:
+      enabled: true
+    dnsCacheConfig:
+      enabled: true
+    gcePersistentDiskCsiDriverConfig:
+      enabled: true
+    httpLoadBalancing:
+      disabled: false
+    istioConfig:
+      disabled: true
+    networkPolicyConfig:
+      disabled: false
+  
+  # More cluster configuration
+  binaryAuthorization:
+    enabled: false
+  clusterAutoscaling:
+    autoscalingProfile: BALANCED
+    enabled: false
+  #clusterIpv4Cidr: 10.134.248.0/21
+  clusterTelemetry:
+    type: ENABLED
+  databaseEncryption:
+    state: DECRYPTED
+  defaultMaxPodsPerNode: 16
+  defaultSnatStatus:
+    disabled: false
+  #enableBinaryAuthorization: true
+  enableIntranodeVisibility: true
+  enableShieldedNodes: true
+  initialNodeCount: 2
+  #ipAllocationPolicy:
+    #clusterIpv4CidrBlock: 10.134.248.0/21
+    #clusterSecondaryRangeName: 
+    #servicesIpv4CidrBlock: 10.134.244.0/22
+    #servicesSecondaryRangeName: 
+  location: us-central1-a
+  loggingConfig:
+    enableComponents:
+    - SYSTEM_COMPONENTS
+    - WORKLOADS
+  loggingService: logging.googleapis.com/kubernetes
+  #masterAuth:
+    #clientCertificateConfig:
+      #issueClientCertificate: false
+  #masterAuthorizedNetworksConfig:
+    #cidrBlocks:
+    #- cidrBlock: 10.183.32.0/19
+      #displayName:
+
+  monitoringConfig:
+    enableComponents:
+    - SYSTEM_COMPONENTS
+  monitoringService: monitoring.googleapis.com/kubernetes
+  networkPolicy:
+    enabled: true
+    provider: CALICO
+  networkRef:
+    name: containercluster-dep-vpcnative
+  subnetworkRef:
+    name: containercluster-dep-vpcnative
+  networkingMode: VPC_NATIVE
+
+  # Immutable. The configuration of the nodepool
+  nodeConfig:
+    diskSizeGb: 100
+    diskType: pd-standard
+    imageType: COS
+    labels:
+      gabgrz.com/workload-type: gabgrz-playground
+    machineType: n1-standard-16
+    oauthScopes:
+    - https://www.googleapis.com/auth/cloud-platform
+    shieldedInstanceConfig:
+      enableIntegrityMonitoring: true
+      enableSecureBoot: true
+    tags:
+    - gabgrz-gke
+    workloadMetadataConfig:
+      mode: GKE_METADATA
+      nodeMetadata: GKE_METADATA_SERVER
+
+  # More cluster configuration
+  nodeLocations:
+  - us-central1-b
+  - us-central1-c
+  nodeVersion: 1.20.15-gke.1000
+  notificationConfig:
+    pubsub:
+      enabled: false
+  podSecurityPolicyConfig:
+    enabled: false
+  privateClusterConfig:
+    enablePrivateEndpoint: true
+    enablePrivateNodes: true
+    masterGlobalAccessConfig:
+      enabled: false
+    masterIpv4CidrBlock: 10.134.243.240/28
+  resourceID: gabgrz-cluster
+  subnetworkRef:
+    external: containercluster-dep-vpcnative
+  verticalPodAutoscaling:
+    enabled: false

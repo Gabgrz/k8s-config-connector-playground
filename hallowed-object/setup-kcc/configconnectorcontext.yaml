@@ -6,3 +6,12 @@ metadata:
   namespace: hallowed-object-367706
 spec:
   googleServiceAccount: "config-connector@hallowed-object-367706.iam.gserviceaccount.com"
+---
+apiVersion: core.cnrm.cloud.google.com/v1beta1
+kind: ConfigConnectorContext
+metadata:
+  # you can only have one ConfigConnectorContext per namespace
+  name: configconnectorcontext.core.cnrm.cloud.google.com
+  namespace: tenant-b-368823
+spec:
+  googleServiceAccount: "config-connector@tenant-b-368823.iam.gserviceaccount.com"

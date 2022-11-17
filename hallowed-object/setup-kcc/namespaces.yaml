@@ -4,3 +4,11 @@ metadata:
   annotations:
     cnrm.cloud.google.com/project-id: hallowed-object-367706
   name: hallowed-object-367706
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  annotations:
+    cnrm.cloud.google.com/project-id: tenant-b-368823
+  name: tenant-b-368823
+---
