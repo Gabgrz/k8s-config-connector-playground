@@ -122,7 +122,7 @@ spec:
     # Replace ${PROJECT_ID?} below with your project ID.
     workloadPool: tenant-b-368823.svc.id.goog
 
-masterAuthorizedNetworksConfig:
-    cidrBlocks:
-      - displayName: Trusted external network
-        cidrBlock: 10.2.0.0/16
+  masterAuthorizedNetworksConfig:
+      cidrBlocks:
+        - displayName: Trusted external network
+          cidrBlock: 10.2.0.0/16
