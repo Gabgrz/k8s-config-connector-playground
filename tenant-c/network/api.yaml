@@ -2,7 +2,7 @@ apiVersion: serviceusage.cnrm.cloud.google.com/v1beta1
 kind: Service
 metadata: 
   name: tenant-c-compute
-  namespace: config-control
+  namespace: tenant-c
   annotations:
     cnrm.cloud.google.com/deletion-policy: abandon
     cnrm.cloud.google.com/project-id: tenant-c
