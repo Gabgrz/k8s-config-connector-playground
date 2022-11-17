@@ -79,7 +79,7 @@ spec:
   nodeConfig:
     diskSizeGb: 100
     diskType: pd-standard
-    imageType: COS
+    imageType: cos_containerd
     labels:
       gabgrz.com/workload-type: gabgrz-playground
     machineType: n1-standard-16
