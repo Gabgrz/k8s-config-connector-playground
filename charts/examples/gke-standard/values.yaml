@@ -2,7 +2,7 @@
 projectId: tenant-c
 cluster:
   # -- The name of this cluster
-  name: team-dev
+  name: team-hubcluster-dev
   # -- The compute location (region for a regional cluster or zone for a zonal cluster)
   location: us-central1
   # -- The private IP range for masters to use when peering to the VPC
@@ -23,3 +23,16 @@ cluster:
     cidrBlocks:
     - cidrBlock: 0.0.0.0/0
       displayName: 'Whole internet'
+
+nodePool:
+  # -- The name of this node pool
+  name: custom-nodepool
+  # -- The compute location (region for a regional cluster or zone for a zonal cluster)
+  location: us-central1
+  autoscaling:
+    minNodeCount: 1
+    maxNodeCount: 2
+  nodeConfig:
+    machineType: n1-standard-1
+    diskSizeGb: 100
+    diskType: pd-standard
