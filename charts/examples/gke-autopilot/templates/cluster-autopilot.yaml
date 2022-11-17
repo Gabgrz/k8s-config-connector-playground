@@ -34,12 +34,20 @@ spec:
     cidrBlocks:
       - cidrBlock: {{ default "0.0.0.0/0" .Values.cluster.cidrBlock }}
         displayName: {{ default "Whole internet" .Values.cluster.displayName }}
+
+  {{ if .Values.network.isExternal "true" }}
   networkRef:
     external: {{ .Values.cluster.networkRef }}
-  # Use a dedicated subnet by default, to increase isolation and allow for
-  # cluster-specific firewalls.
   subnetworkRef:
-    external: {{ .Values.cluster.subnetworkRef }}
+    external: {{ .Values.networking.networkRef }}
+
+  {{ else if .Values.network.isExternal "false" }}
+  networkRef:
+    name: {{ .Values.cluster.networkRef }}
+  subnetworkRef:
+    name: {{ .Values.networking.networkRef }}
+  {{ end }}
+  
   privateClusterConfig:
     # Allow public access to the GKE control plane by default.
     # This default is a deliberate compromise for ease of use over security.
