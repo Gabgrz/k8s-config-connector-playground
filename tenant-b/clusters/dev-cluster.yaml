@@ -116,3 +116,8 @@ spec:
     clusterSecondaryRangeName: clusterrange    
   verticalPodAutoscaling:
     enabled: false
+
+  workloadIdentityConfig:
+    # Workload Identity supports only a single namespace based on your project name.
+    # Replace ${PROJECT_ID?} below with your project ID.
+    workloadPool: tenant-b-368823.svc.id.goog
