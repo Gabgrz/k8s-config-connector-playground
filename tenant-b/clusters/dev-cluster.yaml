@@ -96,7 +96,7 @@ spec:
 
   # More cluster configuration
   nodeLocations:
-  - us-central1-a
+  - us-central1-b
   #nodeVersion: 1.20.15-gke.1000
   notificationConfig:
     pubsub:
