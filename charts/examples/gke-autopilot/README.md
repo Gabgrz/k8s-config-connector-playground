@@ -20,6 +20,7 @@ A Helm chart for provisioning GKE Autopilot Clusters
 | cluster.masterIpv4CidrBlock | string | `"10.254.0.0/28"` | The private IP range for masters to use when peering to the VPC |
 | cluster.name | string | `"team-dev"` | The name of this cluster |
 | cluster.network | object | `{"isExternal":"false","networkRef":"network-regional","subnetworkRef":"subnet-regional"}` | The reference to the network |
+| cluster.network.isExternal | string | `"false"` | Whether the network reference is external to Config Connector (non-managed) |
 | cluster.network.subnetworkRef | string | `"subnet-regional"` | The reference to the subnet |
 | cluster.servicesSecondaryRangeName | string | `"services"` | The private IP range name for services to use, this range must already exist |
 | projectId | string | `"tenant-c"` | The GCP Project ID where this cluster resides |

@@ -9,6 +9,7 @@ cluster:
   masterIpv4CidrBlock: 10.254.0.0/28
   # -- The reference to the network
   network:
+    # -- Whether the network reference is external to Config Connector (non-managed)
     isExternal: "false"
     networkRef: network-regional
     # -- The reference to the subnet
