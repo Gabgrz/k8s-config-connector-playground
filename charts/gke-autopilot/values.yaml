@@ -10,7 +10,7 @@ cluster:
   # The reference to the network
   networkRef: projects/network-project-id/global/networks/default
   # The reference to the subnet
-  subnetRef: projects/network-project-id/regions/region/subnetworks/default
+  subnetworkRef: projects/network-project-id/regions/region/subnetworks/default
   # The private IP range name for pods to use, this range must already exist
   clusterSecondaryRangeName: pods
   # The private IP range name for services to use, this range must already exist
