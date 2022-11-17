@@ -42,7 +42,7 @@ spec:
   enableBinaryAuthorization: false
   enableIntranodeVisibility: true
   enableShieldedNodes: true
-  initialNodeCount: 2
+  initialNodeCount: 1
   #ipAllocationPolicy:
     #clusterIpv4CidrBlock: 10.134.248.0/21
     #clusterSecondaryRangeName: 
@@ -82,7 +82,7 @@ spec:
     #imageType: cos_containerd
     labels:
       gabgrz.com/workload-type: gabgrz-playground
-    machineType: n1-standard-16
+    machineType: n1-standard-1
     oauthScopes:
     - https://www.googleapis.com/auth/cloud-platform
     shieldedInstanceConfig:
