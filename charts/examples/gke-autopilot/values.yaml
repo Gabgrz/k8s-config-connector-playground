@@ -2,7 +2,7 @@
 projectId: team-dev-12345
 cluster:
   # The name of this cluster
-  name: team-dev
+  clusterName: team-dev
   # The compute location (region for a regional cluster or zone for a zonal cluster)
   location: us-central1
   # The private IP range for masters to use when peering to the VPC
