@@ -98,7 +98,7 @@ spec:
   nodeLocations:
   - us-central1-b
   - us-central1-c
-  nodeVersion: 1.20.15-gke.1000
+  #nodeVersion: 1.20.15-gke.1000
   notificationConfig:
     pubsub:
       enabled: false
