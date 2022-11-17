@@ -26,8 +26,8 @@ spec:
       disabled: false
   
   # More cluster configuration
-  binaryAuthorization:
-    enabled: false
+  #binaryAuthorization:
+    #enabled: false
   clusterAutoscaling:
     autoscalingProfile: BALANCED
     enabled: false
@@ -39,7 +39,7 @@ spec:
   defaultMaxPodsPerNode: 16
   defaultSnatStatus:
     disabled: false
-  #enableBinaryAuthorization: true
+  enableBinaryAuthorization: false
   enableIntranodeVisibility: true
   enableShieldedNodes: true
   initialNodeCount: 2
