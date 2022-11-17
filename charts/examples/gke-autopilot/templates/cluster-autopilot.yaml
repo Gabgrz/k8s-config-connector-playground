@@ -39,13 +39,13 @@ spec:
   networkRef:
     external: {{ .Values.cluster.network.networkRef }}
   subnetworkRef:
-    external: {{ .Values.cluster.network.networkRef }}
+    external: {{ .Values.cluster.network.subnetworkRef }}
 
   {{ else if eq .Values.cluster.network.isExternal "false" }}
   networkRef:
     name: {{ .Values.cluster.network.networkRef }}
   subnetworkRef:
-    name: {{ .Values.cluster.network.networkRef }}
+    name: {{ .Values.cluster.network.subnetworkRef }}
   {{ end }}
   
   privateClusterConfig:
