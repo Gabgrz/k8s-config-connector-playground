@@ -113,5 +113,8 @@ spec:
   resourceID: gabgrz-cluster
   subnetworkRef:
     external: containercluster-dep-vpcnative
+  ipAllocationPolicy:
+    servicesSecondaryRangeName: servicesrange
+    clusterSecondaryRangeName: clusterrange    
   verticalPodAutoscaling:
     enabled: false
