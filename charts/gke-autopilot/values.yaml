@@ -1,6 +1,6 @@
+# The GCP Project ID where this cluster resides
+projectId: team-dev-12345
 cluster:
-  # The GCP Project ID where this cluster resides
-  projectId: team-dev
   # The name of this cluster
   clusterName: team-dev
   # The compute location (region for a regional cluster or zone for a zonal cluster)
