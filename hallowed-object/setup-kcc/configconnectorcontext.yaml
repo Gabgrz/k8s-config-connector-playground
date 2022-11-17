@@ -15,3 +15,4 @@ metadata:
   namespace: tenant-b-368823
 spec:
   googleServiceAccount: "config-connector@tenant-b-368823.iam.gserviceaccount.com"
+---
