@@ -66,9 +66,9 @@ spec:
     #enableComponents:
     #- SYSTEM_COMPONENTS
   #monitoringService: monitoring.googleapis.com/kubernetes
-  networkPolicy:
-    enabled: true
-    provider: CALICO
+  #networkPolicy:
+    #enabled: true
+    #provider: CALICO
   networkRef:
     name: containercluster-dep-vpcnative
   subnetworkRef:
@@ -111,8 +111,6 @@ spec:
       enabled: false
     masterIpv4CidrBlock: 10.134.243.240/28
   resourceID: gabgrz-cluster
-  subnetworkRef:
-    external: containercluster-dep-vpcnative
   ipAllocationPolicy:
     servicesSecondaryRangeName: servicesrange
     clusterSecondaryRangeName: clusterrange    
