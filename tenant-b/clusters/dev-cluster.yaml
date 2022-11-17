@@ -31,7 +31,7 @@ spec:
   clusterAutoscaling:
     autoscalingProfile: BALANCED
     enabled: false
-  #clusterIpv4Cidr: 10.134.248.0/21
+  clusterIpv4Cidr: 10.134.248.0/21
   clusterTelemetry:
     type: ENABLED
   databaseEncryption:
