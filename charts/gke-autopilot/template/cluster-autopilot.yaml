@@ -1,0 +1,81 @@
+apiVersion: container.cnrm.cloud.google.com/v1beta1
+kind: ContainerCluster
+metadata:
+  annotations:
+    cnrm.cloud.google.com/project-id: {{ .Values.cluster.projectId }}
+  name: {{ default "autopilot-cluster" .Values.cluster.name }}
+spec:
+    
+spec:
+  addonsConfig:
+    # Enable NodeLocal DNSCache by default, for increased performance and scaling.
+    # https://cloud.google.com/kubernetes-engine/docs/how-to/nodelocal-dns-cache
+    dnsCacheConfig:
+      enabled: true
+    # Enable Compute Engine persistent disk CSI Driver by default, for access to
+    # volume snapshots and encryption with customer-managed encryption keys.
+    # https://cloud.google.com/kubernetes-engine/docs/how-to/persistent-volumes/gce-pd-csi-driver
+    gcePersistentDiskCsiDriverConfig:
+      enabled: true
+  # Enable Shielded GKE Nodes by default, to protect bootstrap credentials.
+  # https://cloud.google.com/kubernetes-engine/docs/how-to/shielded-gke-nodes
+  enableShieldedNodes: true
+  #  # Must be at least 1 when using remove-default-node-pool.
+  #  initialNodeCount: 1
+  # Use VPC-native networking by default, with named secondary IP ranges.
+  ipAllocationPolicy:
+    clusterSecondaryRangeName: {{ default "pods" .Values.cluster.clusterSecondaryRangeName }}
+    servicesSecondaryRangeName: {{ default "services" .Values.cluster.servicesSecondaryRangeName }}
+  location: {{ default "us-central1" .Values.cluster.location }}
+  # Allow internet access to the GKE control plane by default.
+  # This default is a deliberate compromise for ease of use over security.
+  # For increased security, reduce the CIDR blocks to cover only known clients.
+  masterAuthorizedNetworksConfig:
+    cidrBlocks:
+      - cidrBlock: {{ default "0.0.0.0/0" .Values.cluster.cidrBlock }}
+        displayName: {{ default "Whole internet" .Values.cluster.displayName }}
+  networkRef:
+    external: {{ .Values.cluster.networkRef }}
+  # Use a dedicated subnet by default, to increase isolation and allow for
+  # cluster-specific firewalls.
+  subnetworkRef:
+    external: {{ .Values.cluster.subnetworkRef }}
+  privateClusterConfig:
+    # Allow public access to the GKE control plane by default.
+    # This default is a deliberate compromise for ease of use over security.
+    # For increased security, set to true to disable public IP access
+    enablePrivateEndpoint: false
+    # Default to private nodes (no public IP)
+    enablePrivateNodes: true
+    # Enable global access to the GKE control plane's internal loab balancer.
+    # https://cloud.google.com/load-balancing/docs/internal/setting-up-internal#ilb-global-access
+    masterGlobalAccessConfig:
+      enabled: true
+    masterIpv4CidrBlock: {{ default "10.254.0.0/28" .Values.cluster.masterIpv4CidrBlock }}
+  # Enable dataplane V2
+  # https://cloud.google.com/kubernetes-engine/docs/concepts/dataplane-v2
+  datapathProvider: ADVANCED_DATAPATH
+  enableAutopilot: true
+  # Enable logging
+  loggingConfig:
+    enableComponents:
+      - "SYSTEM_COMPONENTS"
+      - "WORKLOADS"
+  # Enable monitoring
+  monitoringConfig:
+    enableComponents:
+      - "SYSTEM_COMPONENTS"
+  # Default to the REGULAR channel.
+  # Use RAPID for faster access to features and fixes.
+  # Use STABLE for less disruption.
+  # Use UNSPECIFIED to unenroll from automatic updates.
+  releaseChannel:
+    channel: REGULAR
+    # Enable Vertical Pod Autoscaling by default.
+    # https://cloud.google.com/kubernetes-engine/docs/concepts/verticalpodautoscaler
+  #  verticalPodAutoscaling:
+  #    enabled: true
+
+  # Enable workload identity by default.
+  workloadIdentityConfig:
+    identityNamespace: {{ .Values.projectId }}.svc.id.goog # kpt-set: ${project-id}.svc.id.goog
