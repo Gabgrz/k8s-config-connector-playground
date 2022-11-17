@@ -35,17 +35,17 @@ spec:
       - cidrBlock: {{ default "0.0.0.0/0" .Values.cluster.cidrBlock }}
         displayName: {{ default "Whole internet" .Values.cluster.displayName }}
 
-  {{ if .Values.network.isExternal "true" }}
+  {{ if eq .Values.cluster.network.isExternal "true" }}
   networkRef:
-    external: {{ .Values.cluster.networkRef }}
+    external: {{ .Values.cluster.network.networkRef }}
   subnetworkRef:
-    external: {{ .Values.networking.networkRef }}
+    external: {{ .Values.cluster.network.networkRef }}
 
-  {{ else if .Values.network.isExternal "false" }}
+  {{ else if eq .Values.cluster.network.isExternal "false" }}
   networkRef:
-    name: {{ .Values.cluster.networkRef }}
+    name: {{ .Values.cluster.network.networkRef }}
   subnetworkRef:
-    name: {{ .Values.networking.networkRef }}
+    name: {{ .Values.cluster.network.networkRef }}
   {{ end }}
   
   privateClusterConfig:
