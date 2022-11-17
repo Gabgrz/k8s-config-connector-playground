@@ -49,11 +49,11 @@ spec:
     #servicesIpv4CidrBlock: 10.134.244.0/22
     #servicesSecondaryRangeName: 
   location: us-central1-a
-  loggingConfig:
-    enableComponents:
-    - SYSTEM_COMPONENTS
-    - WORKLOADS
-  loggingService: logging.googleapis.com/kubernetes
+  #loggingConfig:
+    #enableComponents:
+    #- SYSTEM_COMPONENTS
+    #- WORKLOADS
+  #loggingService: logging.googleapis.com/kubernetes
   #masterAuth:
     #clientCertificateConfig:
       #issueClientCertificate: false
