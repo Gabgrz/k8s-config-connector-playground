@@ -62,10 +62,10 @@ spec:
     #- cidrBlock: 10.183.32.0/19
       #displayName:
 
-  monitoringConfig:
-    enableComponents:
-    - SYSTEM_COMPONENTS
-  monitoringService: monitoring.googleapis.com/kubernetes
+  #monitoringConfig:
+    #enableComponents:
+    #- SYSTEM_COMPONENTS
+  #monitoringService: monitoring.googleapis.com/kubernetes
   networkPolicy:
     enabled: true
     provider: CALICO
