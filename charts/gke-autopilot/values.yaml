@@ -15,3 +15,8 @@ cluster:
   clusterSecondaryRangeName: pods
   # The private IP range name for services to use, this range must already exist
   servicesSecondaryRangeName: services
+  # Authorized networks
+  masterAuthorizedNetworksConfig:
+    cidrBlocks:
+    - cidrBlock: 0.0.0.0/0
+      displayName: 'Whole internet'
