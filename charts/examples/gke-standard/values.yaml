@@ -1,0 +1,25 @@
+# -- The GCP Project ID where this cluster resides
+projectId: tenant-c
+cluster:
+  # -- The name of this cluster
+  name: team-dev
+  # -- The compute location (region for a regional cluster or zone for a zonal cluster)
+  location: us-central1
+  # -- The private IP range for masters to use when peering to the VPC
+  masterIpv4CidrBlock: 10.254.0.0/28
+  # -- The reference to the network
+  network:
+    # -- Whether the network reference is external to Config Connector (non-managed)
+    isExternal: "false"
+    networkRef: network-regional
+    # -- The reference to the subnet
+    subnetworkRef: subnet-regional
+  # -- The private IP range name for pods to use, this range must already exist
+  clusterSecondaryRangeName: pods
+  # -- The private IP range name for services to use, this range must already exist
+  servicesSecondaryRangeName: services
+  # -- Authorized networks
+  masterAuthorizedNetworksConfig:
+    cidrBlocks:
+    - cidrBlock: 0.0.0.0/0
+      displayName: 'Whole internet'

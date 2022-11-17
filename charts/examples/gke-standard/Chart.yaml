@@ -1,6 +1,6 @@
 apiVersion: v2
-name: GKE Autopilot
-description: A Helm Chart for provisioning GKE Autopilot Clusters
+name: GKE Standard
+description: A Helm Chart for provisioning a GKE Standard Cluster
 type: application
 version: 0.1.0
 appVersion: "0.1.0"
