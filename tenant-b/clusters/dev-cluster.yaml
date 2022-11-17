@@ -4,7 +4,7 @@ kind: ContainerCluster
 metadata:
   annotations:
     cnrm.cloud.google.com/project-id: tenant-b-368823
-  name: dev-cluster
+  name: tenant-a-cluster
 spec:
 
   # The configuration for addons supported by GKE.
@@ -104,13 +104,17 @@ spec:
       enabled: false
   podSecurityPolicyConfig:
     enabled: false
+
   privateClusterConfig:
     enablePrivateEndpoint: true
     enablePrivateNodes: true
-    masterGlobalAccessConfig:
-      enabled: false
-    masterIpv4CidrBlock: 10.134.243.240/28
-  resourceID: gabgrz-cluster
+    masterIpv4CidrBlock: "10.178.213.0/28"
+  masterAuthorizedNetworksConfig:
+    cidrBlocks:
+      - displayName: Trusted external network
+        cidrBlock: 10.2.0.0/16
+  
+
   ipAllocationPolicy:
     servicesSecondaryRangeName: servicesrange
     clusterSecondaryRangeName: clusterrange    
@@ -121,8 +125,3 @@ spec:
     # Workload Identity supports only a single namespace based on your project name.
     # Replace ${PROJECT_ID?} below with your project ID.
     workloadPool: tenant-b-368823.svc.id.goog
-
-  masterAuthorizedNetworksConfig:
-      cidrBlocks:
-        - displayName: Trusted external network
-          cidrBlock: 10.2.0.0/16
