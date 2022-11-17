@@ -4,3 +4,6 @@ description: A Helm chart for provisioning GKE Autopilot Clusters
 type: application
 version: 0.1.0
 appVersion: "0.1.0"
+maintainers:
+  - email: gab.120gg@gmail.com
+    name: Gabriel Garoz
