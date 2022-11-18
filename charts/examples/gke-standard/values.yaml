@@ -1,5 +1,5 @@
 # -- The GCP Project ID where this cluster resides
-projectId: tenant-c
+projectId: tenant-d
 cluster:
   # -- The name of this cluster
   name: team-hubcluster-dev
