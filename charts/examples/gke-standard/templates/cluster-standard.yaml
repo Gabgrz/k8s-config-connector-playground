@@ -46,29 +46,23 @@ spec:
 
   addonsConfig:
     configConnectorConfig:
-      enabled: {{ .Values.cluster.addons }}
+      enabled: {{ .Values.cluster.addonsConfig.configConnectorConfig.enabled }}
     dnsCacheConfig:
-      enabled: boolean
+      enabled: {{ .Values.cluster.addonsConfig.dnsCacheConfig.enabled }}
     gcePersistentDiskCsiDriverConfig:
-      enabled: boolean
-    gcpFilestoreCsiDriverConfig:
-      enabled: boolean
+      enabled: {{ .Values.cluster.addonsConfig.gcePersistentDiskCsiDriverConfig.enabled }}
     gkeBackupAgentConfig:
-      enabled: boolean
+      enabled: {{ .Values.cluster.addonsConfig.gkeBackupAgentConfig.enabled }}
     horizontalPodAutoscaling:
-      disabled: boolean
+      disabled: {{ .Values.cluster.addonsConfig.horizontalPodAutoscaling.enabled }}
     httpLoadBalancing:
-      disabled: boolean
-    istioConfig:
-      auth: string
-      disabled: boolean
+      disabled: {{ .Values.cluster.addonsConfig.httpLoadBalancing.enabled }}
     kalmConfig:
-      enabled: boolean
+      enabled: {{ .Values.cluster.addonsConfig.kalmConfig.enabled }}
     networkPolicyConfig:
-      disabled: boolean
-  authenticatorGroupsConfig:
+      disabled: {{ .Values.cluster.addonsConfig.networkPolicyConfig.enabled }}
 
----  
+---
 apiVersion: container.cnrm.cloud.google.com/v1beta1
 kind: ContainerNodePool
 metadata:

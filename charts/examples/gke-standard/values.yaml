@@ -43,8 +43,6 @@ cluster:
       enabled: false
     networkPolicyConfig:
       disabled: false
-    authenticatorGroupsConfig:
-      securityGroup: 
 
 nodePool:
   # -- Name of this node pool
