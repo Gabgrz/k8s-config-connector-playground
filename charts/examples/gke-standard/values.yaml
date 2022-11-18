@@ -28,7 +28,7 @@ cluster:
   # @default -- See each add-on default value
   addonsConfig:
     configConnectorConfig:
-      enabled: true
+      enabled: false
     dnsCacheConfig:
       enabled: true
     gcePersistentDiskCsiDriverConfig:
