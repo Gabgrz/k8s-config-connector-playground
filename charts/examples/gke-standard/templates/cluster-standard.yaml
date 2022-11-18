@@ -60,6 +60,9 @@ spec:
     networkPolicyConfig:
       disabled: {{ .Values.cluster.addonsConfig.networkPolicyConfig.disabled }}
 
+  workloadIdentityConfig:
+    workloadPool: "{{ .Values.projectId }}.svc.id.goog"      
+
 ---
 apiVersion: container.cnrm.cloud.google.com/v1beta1
 kind: ContainerNodePool
