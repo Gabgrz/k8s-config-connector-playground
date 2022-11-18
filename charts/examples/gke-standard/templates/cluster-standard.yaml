@@ -54,13 +54,13 @@ spec:
     gkeBackupAgentConfig:
       enabled: {{ .Values.cluster.addonsConfig.gkeBackupAgentConfig.enabled }}
     horizontalPodAutoscaling:
-      disabled: {{ .Values.cluster.addonsConfig.horizontalPodAutoscaling.enabled }}
+      disabled: {{ .Values.cluster.addonsConfig.horizontalPodAutoscaling.disabled }}
     httpLoadBalancing:
-      disabled: {{ .Values.cluster.addonsConfig.httpLoadBalancing.enabled }}
+      disabled: {{ .Values.cluster.addonsConfig.httpLoadBalancing.disabled }}
     kalmConfig:
       enabled: {{ .Values.cluster.addonsConfig.kalmConfig.enabled }}
     networkPolicyConfig:
-      disabled: {{ .Values.cluster.addonsConfig.networkPolicyConfig.enabled }}
+      disabled: {{ .Values.cluster.addonsConfig.networkPolicyConfig.disabled }}
 
 ---
 apiVersion: container.cnrm.cloud.google.com/v1beta1
