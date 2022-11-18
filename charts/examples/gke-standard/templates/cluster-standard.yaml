@@ -7,7 +7,11 @@ metadata:
   name: {{ default "standard-cluster" .Values.cluster.name }}
 spec:
   location: {{ default "us-central1" .Values.cluster.location }}
+
   initialNodeCount: 1
+  ipAllocationPolicy:
+    clusterSecondaryRangeName: {{ default "pods" .Values.cluster.clusterSecondaryRangeName }}
+    servicesSecondaryRangeName: {{ default "services" .Values.cluster.servicesSecondaryRangeName }}
 
   {{ if eq .Values.cluster.network.isExternal "true" }}
   networkRef:
@@ -60,7 +64,6 @@ spec:
       - tagone
       - tagtwo
     preemptible: false
-    minCpuPlatform: "Intel Haswell"
     oauthScopes:
       - "https://www.googleapis.com/auth/logging.write"
       - "https://www.googleapis.com/auth/monitoring"
