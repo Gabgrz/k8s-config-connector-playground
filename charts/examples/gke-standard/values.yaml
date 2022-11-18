@@ -42,6 +42,9 @@ cluster:
     networkPolicyConfig:
       disabled: true
 
+  verticalPodAutoscaling:
+    enabled: true
+
 nodePool:
   # -- Name of this node pool
   name: custom-nodepool
