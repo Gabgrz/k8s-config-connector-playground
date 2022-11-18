@@ -15,19 +15,19 @@ A Helm Chart for provisioning a GKE Standard Cluster
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | cluster.addonsConfig | object | See each add-on default value | GKE add-ons configuration |
-| cluster.clusterSecondaryRangeName | string | `"pods"` | The private IP range name for pods to use, this range must already exist |
-| cluster.location | string | `"us-central1"` | The compute location (region for a regional cluster or zone for a zonal cluster) |
+| cluster.clusterSecondaryRangeName | string | `"pods"` | Private IP range name for pods to use, this range must already exist |
+| cluster.location | string | `"us-central1"` | Compute location (region for a regional cluster or zone for a zonal cluster) |
 | cluster.masterAuthorizedNetworksConfig | object | `{"cidrBlocks":[{"cidrBlock":"0.0.0.0/0","displayName":"Whole internet"}]}` | Authorized networks |
-| cluster.masterIpv4CidrBlock | string | `"10.254.0.0/28"` | The private IP range for masters to use when peering to the VPC |
-| cluster.name | string | `"team-hubcluster-dev"` | The name of this cluster |
-| cluster.network | object | `{"isExternal":"false","networkRef":"network-regional","subnetworkRef":"subnet-regional"}` | The reference to the network |
+| cluster.masterIpv4CidrBlock | string | `"10.254.0.0/28"` | Private IP range for masters to use when peering to the VPC |
+| cluster.name | string | `"team-hubcluster-dev"` | Name of this cluster |
+| cluster.network | object | `{"isExternal":"false","networkRef":"network-regional","subnetworkRef":"subnet-regional"}` | Reference to the network |
 | cluster.network.isExternal | string | `"false"` | Whether the network reference is managed by Config Connector. If not managed, set to true. |
-| cluster.network.subnetworkRef | string | `"subnet-regional"` | The reference to the subnet |
-| cluster.servicesSecondaryRangeName | string | `"services"` | The private IP range name for services to use, this range must already exist |
+| cluster.network.subnetworkRef | string | `"subnet-regional"` | Reference to the subnet |
+| cluster.servicesSecondaryRangeName | string | `"services"` | Private IP range name for services to use, this range must already exist |
 | nodePool.autoscaling.maxNodeCount | int | `2` |  |
 | nodePool.autoscaling.minNodeCount | int | `1` |  |
-| nodePool.location | string | `"us-central1"` | The compute location (region for a regional cluster or zone for a zonal cluster) |
-| nodePool.name | string | `"custom-nodepool"` | The name of this node pool |
+| nodePool.location | string | `"us-central1"` | Compute location (region for a regional cluster or zone for a zonal cluster) |
+| nodePool.name | string | `"custom-nodepool"` | Name of this node pool |
 | nodePool.nodeConfig.diskSizeGb | int | `100` |  |
 | nodePool.nodeConfig.diskType | string | `"pd-standard"` |  |
 | nodePool.nodeConfig.machineType | string | `"n1-standard-1"` |  |
