@@ -1,22 +1,22 @@
 # -- The GCP Project ID where this cluster resides
 projectId: tenant-d
 cluster:
-  # -- The name of this cluster
+  # -- Name of this cluster
   name: team-hubcluster-dev
-  # -- The compute location (region for a regional cluster or zone for a zonal cluster)
+  # -- Compute location (region for a regional cluster or zone for a zonal cluster)
   location: us-central1
-  # -- The private IP range for masters to use when peering to the VPC
+  # -- Private IP range for masters to use when peering to the VPC
   masterIpv4CidrBlock: 10.254.0.0/28
-  # -- The reference to the network
+  # -- Reference to the network
   network:
     # -- Whether the network reference is managed by Config Connector. If not managed, set to true.
     isExternal: "false"
     networkRef: network-regional
-    # -- The reference to the subnet
+    # -- Reference to the subnet
     subnetworkRef: subnet-regional
-  # -- The private IP range name for pods to use, this range must already exist
+  # -- Private IP range name for pods to use, this range must already exist
   clusterSecondaryRangeName: pods
-  # -- The private IP range name for services to use, this range must already exist
+  # -- Private IP range name for services to use, this range must already exist
   servicesSecondaryRangeName: services
   # -- Authorized networks
   masterAuthorizedNetworksConfig:
@@ -47,9 +47,9 @@ cluster:
       securityGroup: 
 
 nodePool:
-  # -- The name of this node pool
+  # -- Name of this node pool
   name: custom-nodepool
-  # -- The compute location (region for a regional cluster or zone for a zonal cluster)
+  # -- Compute location (region for a regional cluster or zone for a zonal cluster)
   location: us-central1
   autoscaling:
     minNodeCount: 1
