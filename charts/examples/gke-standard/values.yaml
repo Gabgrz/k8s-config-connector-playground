@@ -28,7 +28,7 @@ cluster:
   # @default -- See each add-on default value
   addonsConfig:
     configConnectorConfig:
-      enabled: false
+      enabled: true
     dnsCacheConfig:
       enabled: true
     gcePersistentDiskCsiDriverConfig:
@@ -54,6 +54,6 @@ nodePool:
     minNodeCount: 2
     maxNodeCount: 3
   nodeConfig:
-    machineType: n1-standard-1
+    machineType: n1-standard-2
     diskSizeGb: 100
     diskType: pd-standard
