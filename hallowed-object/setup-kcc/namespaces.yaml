@@ -19,3 +19,10 @@ metadata:
     cnrm.cloud.google.com/project-id: tenant-c
   name: tenant-c
 ---
+apiVersion: v1
+kind: Namespace
+metadata:
+  annotations:
+    cnrm.cloud.google.com/project-id: tenant-d
+  name: tenant-d
+---
