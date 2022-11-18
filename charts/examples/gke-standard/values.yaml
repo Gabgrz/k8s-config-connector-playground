@@ -32,7 +32,7 @@ cluster:
     dnsCacheConfig:
       enabled: true
     gcePersistentDiskCsiDriverConfig:
-      enabled: false
+      enabled: true
     gkeBackupAgentConfig:
       enabled: false
     horizontalPodAutoscaling:
@@ -42,7 +42,7 @@ cluster:
     kalmConfig:
       enabled: false
     networkPolicyConfig:
-      disabled: false
+      disabled: true
 
 nodePool:
   # -- Name of this node pool
