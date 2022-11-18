@@ -51,8 +51,8 @@ nodePool:
   # -- Compute location (region for a regional cluster or zone for a zonal cluster)
   location: us-central1
   autoscaling:
-    minNodeCount: 1
-    maxNodeCount: 2
+    minNodeCount: 2
+    maxNodeCount: 3
   nodeConfig:
     machineType: n1-standard-1
     diskSizeGb: 100

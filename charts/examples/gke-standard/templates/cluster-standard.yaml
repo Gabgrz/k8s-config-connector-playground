@@ -60,10 +60,12 @@ spec:
     networkPolicyConfig:
       disabled: {{ .Values.cluster.addonsConfig.networkPolicyConfig.disabled }}
 
+  verticalPodAutoscaling:
+    enabled: true
   identityServiceConfig:
     enabled: true
   workloadIdentityConfig:
-    workloadPool: "{{ .Values.projectId }}.svc.id.goog"      
+    workloadPool: {{ .Values.projectId }}.svc.id.goog
 
 ---
 apiVersion: container.cnrm.cloud.google.com/v1beta1
