@@ -33,8 +33,6 @@ cluster:
       enabled: true
     gcePersistentDiskCsiDriverConfig:
       enabled: true
-    gkeBackupAgentConfig:
-      enabled: false
     horizontalPodAutoscaling:
       disabled: true
     httpLoadBalancing:

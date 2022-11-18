@@ -51,8 +51,6 @@ spec:
       enabled: {{ .Values.cluster.addonsConfig.dnsCacheConfig.enabled }}
     gcePersistentDiskCsiDriverConfig:
       enabled: {{ .Values.cluster.addonsConfig.gcePersistentDiskCsiDriverConfig.enabled }}
-    gkeBackupAgentConfig:
-      enabled: {{ .Values.cluster.addonsConfig.gkeBackupAgentConfig.enabled }}
     horizontalPodAutoscaling:
       disabled: {{ .Values.cluster.addonsConfig.horizontalPodAutoscaling.disabled }}
     httpLoadBalancing:
