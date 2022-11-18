@@ -44,6 +44,30 @@ spec:
       - cidrBlock: {{ default "0.0.0.0/0" .Values.cluster.cidrBlock }}
         displayName: {{ default "Whole internet" .Values.cluster.displayName }}
 
+  addonsConfig:
+    configConnectorConfig:
+      enabled: {{ .Values.cluster.addons }}
+    dnsCacheConfig:
+      enabled: boolean
+    gcePersistentDiskCsiDriverConfig:
+      enabled: boolean
+    gcpFilestoreCsiDriverConfig:
+      enabled: boolean
+    gkeBackupAgentConfig:
+      enabled: boolean
+    horizontalPodAutoscaling:
+      disabled: boolean
+    httpLoadBalancing:
+      disabled: boolean
+    istioConfig:
+      auth: string
+      disabled: boolean
+    kalmConfig:
+      enabled: boolean
+    networkPolicyConfig:
+      disabled: boolean
+  authenticatorGroupsConfig:
+
 ---  
 apiVersion: container.cnrm.cloud.google.com/v1beta1
 kind: ContainerNodePool

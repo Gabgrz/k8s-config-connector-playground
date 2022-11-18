@@ -14,13 +14,14 @@ A Helm Chart for provisioning a GKE Standard Cluster
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
+| cluster.addonsConfig | object | `{"authenticatorGroupsConfig":{"securityGroup":null},"configConnectorConfig":{"enabled":true},"dnsCacheConfig":{"enabled":true},"gcePersistentDiskCsiDriverConfig":{"enabled":false},"gkeBackupAgentConfig":{"enabled":false},"horizontalPodAutoscaling":{"disabled":true},"httpLoadBalancing":{"disabled":false},"kalmConfig":{"enabled":false},"networkPolicyConfig":{"disabled":false}}` | GKE add-ons configuration |
 | cluster.clusterSecondaryRangeName | string | `"pods"` | The private IP range name for pods to use, this range must already exist |
 | cluster.location | string | `"us-central1"` | The compute location (region for a regional cluster or zone for a zonal cluster) |
 | cluster.masterAuthorizedNetworksConfig | object | `{"cidrBlocks":[{"cidrBlock":"0.0.0.0/0","displayName":"Whole internet"}]}` | Authorized networks |
 | cluster.masterIpv4CidrBlock | string | `"10.254.0.0/28"` | The private IP range for masters to use when peering to the VPC |
 | cluster.name | string | `"team-hubcluster-dev"` | The name of this cluster |
 | cluster.network | object | `{"isExternal":"false","networkRef":"network-regional","subnetworkRef":"subnet-regional"}` | The reference to the network |
-| cluster.network.isExternal | string | `"false"` | Whether the network reference is external to Config Connector (non-managed) |
+| cluster.network.isExternal | string | `"false"` | Whether the network reference is managed by Config Connector. If not managed, set to true. |
 | cluster.network.subnetworkRef | string | `"subnet-regional"` | The reference to the subnet |
 | cluster.servicesSecondaryRangeName | string | `"services"` | The private IP range name for services to use, this range must already exist |
 | nodePool.autoscaling.maxNodeCount | int | `2` |  |
