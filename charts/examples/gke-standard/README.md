@@ -14,7 +14,7 @@ A Helm Chart for provisioning a GKE Standard Cluster
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| cluster.addonsConfig | object | `{"authenticatorGroupsConfig":{"securityGroup":null},"configConnectorConfig":{"enabled":true},"dnsCacheConfig":{"enabled":true},"gcePersistentDiskCsiDriverConfig":{"enabled":false},"gkeBackupAgentConfig":{"enabled":false},"horizontalPodAutoscaling":{"disabled":true},"httpLoadBalancing":{"disabled":false},"kalmConfig":{"enabled":false},"networkPolicyConfig":{"disabled":false}}` | GKE add-ons configuration |
+| cluster.addonsConfig | object | See each add-on default value | GKE add-ons configuration |
 | cluster.clusterSecondaryRangeName | string | `"pods"` | The private IP range name for pods to use, this range must already exist |
 | cluster.location | string | `"us-central1"` | The compute location (region for a regional cluster or zone for a zonal cluster) |
 | cluster.masterAuthorizedNetworksConfig | object | `{"cidrBlocks":[{"cidrBlock":"0.0.0.0/0","displayName":"Whole internet"}]}` | Authorized networks |

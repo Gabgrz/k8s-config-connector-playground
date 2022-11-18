@@ -23,7 +23,9 @@ cluster:
     cidrBlocks:
     - cidrBlock: 0.0.0.0/0
       displayName: 'Whole internet'
+
   # -- (object) GKE add-ons configuration
+  # @default -- See each add-on default value
   addonsConfig:
     configConnectorConfig:
       enabled: true
