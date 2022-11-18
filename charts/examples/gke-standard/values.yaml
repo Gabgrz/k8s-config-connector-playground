@@ -34,7 +34,7 @@ cluster:
     gcePersistentDiskCsiDriverConfig:
       enabled: true
     horizontalPodAutoscaling:
-      disabled: true
+      disabled: false
     httpLoadBalancing:
       disabled: false
     kalmConfig:
