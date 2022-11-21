@@ -1,54 +1,74 @@
-gke-standard:
-  projectId: tenant-d
-  cluster:
-    name: team-hubcluster-dev
-    location: us-central1
+# GCP Project ID
+projectId: tenant-d
 
-    privateClusterConfig:
-      enablePrivateEndpoint: false
-      enablePrivateNodes: true
-      masterGlobalAccessConfig:
-        enabled: true
-      masterIpv4CidrBlock: 10.254.0.0/28
+# VPC Configuration
+vpc:
+  name: network-regional
+  routingMode: REGIONAL
+  autoCreateSubnetworks: false
 
-    network:
-      isExternal: "false"
-      networkRef: network-regional
-      subnetworkRef: subnet-regional
+# Subnet Configuration
+subnet:
+  name: subnet-regional
+  ipCidrRange: 10.2.0.0/16
+  region: us-central1
+  secondaryIpRange:
+    servicesRangeName: services
+    servicesIpCidrRange: 10.3.0.0/16
+    podsRangeName: pods
+    podsIpCidrRange: 10.4.0.0/16
 
-    clusterSecondaryRangeName: pods
-    servicesSecondaryRangeName: services
-    masterAuthorizedNetworksConfig:
-      cidrBlocks:
-      - cidrBlock: 0.0.0.0/0
-        displayName: 'Whole internet'
+# GKE Cluster Configuration
+cluster:
+  name: team-hubcluster-dev
+  location: us-central1
 
-    addonsConfig:
-      configConnectorConfig:
-        enabled: true
-      dnsCacheConfig:
-        enabled: true
-      gcePersistentDiskCsiDriverConfig:
-        enabled: true
-      horizontalPodAutoscaling:
-        disabled: false
-      httpLoadBalancing:
-        disabled: false
-      kalmConfig:
-        enabled: false
-      networkPolicyConfig:
-        disabled: true
-
-    verticalPodAutoscaling:
+  privateClusterConfig:
+    enablePrivateEndpoint: false
+    enablePrivateNodes: true
+    masterGlobalAccessConfig:
       enabled: true
+    masterIpv4CidrBlock: 10.254.0.0/28
 
-  nodePool:
-    name: custom-nodepool
-    location: us-central1
-    autoscaling:
-      minNodeCount: 2
-      maxNodeCount: 3
-    nodeConfig:
-      machineType: n1-standard-2
-      diskSizeGb: 100
-      diskType: pd-standard
+  network:
+    isExternal: "false"
+    networkRef: network-regional
+    subnetworkRef: subnet-regional
+
+  clusterSecondaryRangeName: pods
+  servicesSecondaryRangeName: services
+  masterAuthorizedNetworksConfig:
+    cidrBlocks:
+    - cidrBlock: 0.0.0.0/0
+      displayName: 'Whole internet'
+
+  addonsConfig:
+    configConnectorConfig:
+      enabled: true
+    dnsCacheConfig:
+      enabled: true
+    gcePersistentDiskCsiDriverConfig:
+      enabled: true
+    horizontalPodAutoscaling:
+      disabled: false
+    httpLoadBalancing:
+      disabled: false
+    kalmConfig:
+      enabled: false
+    networkPolicyConfig:
+      disabled: true
+
+  verticalPodAutoscaling:
+    enabled: true
+
+# GKE Node Pool Configuration
+nodePool:
+  name: custom-nodepool
+  location: us-central1
+  autoscaling:
+    minNodeCount: 2
+    maxNodeCount: 3
+  nodeConfig:
+    machineType: n1-standard-2
+    diskSizeGb: 100
+    diskType: pd-standard
