@@ -10,7 +10,7 @@ cluster:
     # Allow public access to the GKE control plane by default.
     # This default is a deliberate compromise for ease of use over security.
     # For increased security, set to true to disable public IP access
-    enablePrivateEndpoint: false
+    enablePrivateEndpoint: true
     # Default to private nodes (no public IP)
     enablePrivateNodes: true
     # Enable global access to the GKE control plane's internal loab balancer.
