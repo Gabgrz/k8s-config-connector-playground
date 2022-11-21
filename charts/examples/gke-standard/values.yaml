@@ -1,5 +1,6 @@
 # -- The GCP Project ID where this cluster resides
 projectId: tenant-d
+
 cluster:
   # -- Name of this cluster
   name: team-hubcluster-dev
@@ -24,6 +25,7 @@ cluster:
     networkRef: network-regional
     # -- Reference to the subnet
     subnetworkRef: subnet-regional
+
   # -- Private IP range name for pods to use, this range must already exist
   clusterSecondaryRangeName: pods
   # -- Private IP range name for services to use, this range must already exist
