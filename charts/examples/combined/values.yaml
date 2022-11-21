@@ -1,44 +1,28 @@
 gke-standard:
-  # -- The GCP Project ID where this cluster resides
   projectId: tenant-d
-
   cluster:
-    # -- Name of this cluster
     name: team-hubcluster-dev
-    # -- Compute location (region for a regional cluster or zone for a zonal cluster)
     location: us-central1
 
     privateClusterConfig:
-      # -- Whether the cluster endpoint should be private
       enablePrivateEndpoint: false
-      # -- Whether the cluster nodes should be private
       enablePrivateNodes: true
-      # -- Enable global access to the GKE control plane's internal loab balancer.
       masterGlobalAccessConfig:
         enabled: true
-      # -- Immutable. The IP range in CIDR notation to use for the hosted master network.       
       masterIpv4CidrBlock: 10.254.0.0/28
 
-    # -- Reference to the network
     network:
-      # -- Whether the network reference is managed by Config Connector. If not managed, set to true.
       isExternal: "false"
       networkRef: network-regional
-      # -- Reference to the subnet
       subnetworkRef: subnet-regional
 
-    # -- Private IP range name for pods to use, this range must already exist
     clusterSecondaryRangeName: pods
-    # -- Private IP range name for services to use, this range must already exist
     servicesSecondaryRangeName: services
-    # -- Authorized networks
     masterAuthorizedNetworksConfig:
       cidrBlocks:
       - cidrBlock: 0.0.0.0/0
         displayName: 'Whole internet'
 
-    # -- (object) GKE add-ons configuration
-    # @default -- See each add-on default value
     addonsConfig:
       configConnectorConfig:
         enabled: true
@@ -59,9 +43,7 @@ gke-standard:
       enabled: true
 
   nodePool:
-    # -- Name of this node pool
     name: custom-nodepool
-    # -- Compute location (region for a regional cluster or zone for a zonal cluster)
     location: us-central1
     autoscaling:
       minNodeCount: 2
