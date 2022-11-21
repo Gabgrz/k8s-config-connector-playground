@@ -1,6 +1,6 @@
 apiVersion: v2
-name: gke-autopilot
-description: A Helm Chart for provisioning GKE Autopilot Clusters
+name: vpc-subnet
+description: A Helm Chart for provisioning a generic VPC with a subnet
 type: application
 version: 0.1.0
 appVersion: "0.1.0"

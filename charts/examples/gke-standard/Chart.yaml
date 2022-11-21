@@ -1,5 +1,5 @@
 apiVersion: v2
-name: GKE Standard
+name: gke-standard
 description: A Helm Chart for provisioning a GKE Standard Cluster
 type: application
 version: 0.1.0

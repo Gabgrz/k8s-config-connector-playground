@@ -1,0 +1,24 @@
+---
+apiVersion: compute.cnrm.cloud.google.com/v1beta1
+kind: ComputeNetwork
+metadata:
+  name: {{ .Values.vpc.name }}
+spec:
+  routingMode: {{ .Values.vpc.routingMode }}
+  autoCreateSubnetworks: false
+---
+apiVersion: compute.cnrm.cloud.google.com/v1beta1
+kind: ComputeSubnetwork
+metadata:
+  name: {{ .Values.subnet.name }}
+spec:
+  ipCidrRange: {{ .Values.subnet.ipCidrRange }}
+  region: {{ .Values.subnet.region }}
+  networkRef:
+    name: {{ .Values.vpc.name }}
+  secondaryIpRange:
+  - rangeName: {{ .Values.subnet.secondaryIpRange.servicesRangeName }}
+    ipCidrRange: {{ .Values.subnet.secondaryIpRange.servicesIpCidrRange }}
+  - rangeName: {{ .Values.subnet.podsRangeName }}
+    ipCidrRange: {{ .Values.subnet.podsIpCidrRange }}
+

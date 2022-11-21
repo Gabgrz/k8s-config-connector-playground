@@ -1,0 +1,14 @@
+vpc:
+  name: network-regional
+  routingMode: REGIONAL
+  autoCreateSubnetworks: false
+
+subnet:
+  name: subnet-regional
+  ipCidrRange: 10.2.0.0/16
+  region: us-central1
+  secondaryIpRange:
+    servicesRangeName: services
+    servicesIpCidrRange: 10.3.0.0/16
+    podsRangeName: pods
+    podsIpCidrRange: 10.4.0.0/16

@@ -1,0 +1,9 @@
+apiVersion: v2
+name: gke-standard
+type: application
+version: 0.1.0
+
+dependencies:
+  - name: gke-standard
+    version: "0.1.0"
+    repository: "../gke-standard"
