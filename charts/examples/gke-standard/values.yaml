@@ -5,8 +5,20 @@ cluster:
   name: team-hubcluster-dev
   # -- Compute location (region for a regional cluster or zone for a zonal cluster)
   location: us-central1
-  # -- Private IP range for masters to use when peering to the VPC
-  masterIpv4CidrBlock: 10.254.0.0/28
+
+  privateClusterConfig:
+    # Allow public access to the GKE control plane by default.
+    # This default is a deliberate compromise for ease of use over security.
+    # For increased security, set to true to disable public IP access
+    enablePrivateEndpoint: false
+    # Default to private nodes (no public IP)
+    enablePrivateNodes: true
+    # Enable global access to the GKE control plane's internal loab balancer.
+    # https://cloud.google.com/load-balancing/docs/internal/setting-up-internal#ilb-global-access
+    masterGlobalAccessConfig:
+      enabled: true
+    masterIpv4CidrBlock: 10.254.0.0/28
+
   # -- Reference to the network
   network:
     # -- Whether the network reference is managed by Config Connector. If not managed, set to true.
