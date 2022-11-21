@@ -18,19 +18,23 @@ A Helm Chart for provisioning a GKE Standard Cluster
 | cluster.clusterSecondaryRangeName | string | `"pods"` | Private IP range name for pods to use, this range must already exist |
 | cluster.location | string | `"us-central1"` | Compute location (region for a regional cluster or zone for a zonal cluster) |
 | cluster.masterAuthorizedNetworksConfig | object | `{"cidrBlocks":[{"cidrBlock":"0.0.0.0/0","displayName":"Whole internet"}]}` | Authorized networks |
-| cluster.masterIpv4CidrBlock | string | `"10.254.0.0/28"` | Private IP range for masters to use when peering to the VPC |
 | cluster.name | string | `"team-hubcluster-dev"` | Name of this cluster |
 | cluster.network | object | `{"isExternal":"false","networkRef":"network-regional","subnetworkRef":"subnet-regional"}` | Reference to the network |
 | cluster.network.isExternal | string | `"false"` | Whether the network reference is managed by Config Connector. If not managed, set to true. |
 | cluster.network.subnetworkRef | string | `"subnet-regional"` | Reference to the subnet |
+| cluster.privateClusterConfig.enablePrivateEndpoint | bool | `false` | Whether the cluster endpoint should be private |
+| cluster.privateClusterConfig.enablePrivateNodes | bool | `true` | Whether the cluster nodes should be private |
+| cluster.privateClusterConfig.masterGlobalAccessConfig | object | `{"enabled":true}` | Enable global access to the GKE control plane's internal loab balancer. |
+| cluster.privateClusterConfig.masterIpv4CidrBlock | string | `"10.254.0.0/28"` | Immutable. The IP range in CIDR notation to use for the hosted master network.        |
 | cluster.servicesSecondaryRangeName | string | `"services"` | Private IP range name for services to use, this range must already exist |
-| nodePool.autoscaling.maxNodeCount | int | `2` |  |
-| nodePool.autoscaling.minNodeCount | int | `1` |  |
+| cluster.verticalPodAutoscaling.enabled | bool | `true` |  |
+| nodePool.autoscaling.maxNodeCount | int | `3` |  |
+| nodePool.autoscaling.minNodeCount | int | `2` |  |
 | nodePool.location | string | `"us-central1"` | Compute location (region for a regional cluster or zone for a zonal cluster) |
 | nodePool.name | string | `"custom-nodepool"` | Name of this node pool |
 | nodePool.nodeConfig.diskSizeGb | int | `100` |  |
 | nodePool.nodeConfig.diskType | string | `"pd-standard"` |  |
-| nodePool.nodeConfig.machineType | string | `"n1-standard-1"` |  |
+| nodePool.nodeConfig.machineType | string | `"n1-standard-2"` |  |
 | projectId | string | `"tenant-d"` | The GCP Project ID where this cluster resides |
 
 ----------------------------------------------
