@@ -1,0 +1,12 @@
+apiVersion: v2
+name: gke-standard-combined-2
+type: application
+version: 0.1.0
+
+dependencies:
+  - name: vpc-subnet
+    version: "0.1.0"
+    repository: "us-central1-docker.pkg.dev/tenant-d/quickstart-helm-repo/"
+  - name: gke-standard
+    version: "0.1.0"
+    repository: "us-central1-docker.pkg.dev/tenant-d/quickstart-helm-repo/"
