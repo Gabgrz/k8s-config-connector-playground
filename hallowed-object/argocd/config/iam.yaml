@@ -1,0 +1,24 @@
+# Argo CD Service Account
+apiVersion: iam.cnrm.cloud.google.com/v1beta1
+kind: IAMServiceAccount
+metadata:
+  name: argocd
+spec:
+  displayName: Argo CD Service Account
+---
+## Workload Identity
+apiVersion: iam.cnrm.cloud.google.com/v1beta1
+kind: IAMPolicy
+metadata:
+  name: argocd-workloadidentity
+spec:
+  resourceRef:
+    apiVersion: iam.cnrm.cloud.google.com/v1beta1
+    kind: IAMServiceAccount
+    name: argocd
+  bindings:
+    - role: roles/iam.workloadIdentityUser
+      members:
+        - serviceAccount:hallowed-object-367706.svc.id.goog[argocd/argocd-server]
+        - serviceAccount:hallowed-object-367706.svc.id.goog[argocd/argocd-application-controller]
+        - serviceAccount:hallowed-object-367706.svc.id.goog[argocd/argocd-repo-server]

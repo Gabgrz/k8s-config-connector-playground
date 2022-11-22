@@ -17,11 +17,14 @@ A Helm Chart for provisioning GKE Autopilot Clusters
 | cluster.clusterSecondaryRangeName | string | `"pods"` | The private IP range name for pods to use, this range must already exist |
 | cluster.location | string | `"us-central1"` | The compute location (region for a regional cluster or zone for a zonal cluster) |
 | cluster.masterAuthorizedNetworksConfig | object | `{"cidrBlocks":[{"cidrBlock":"0.0.0.0/0","displayName":"Whole internet"}]}` | Authorized networks |
-| cluster.masterIpv4CidrBlock | string | `"10.254.0.0/28"` | The private IP range for masters to use when peering to the VPC |
 | cluster.name | string | `"team-dev"` | The name of this cluster |
 | cluster.network | object | `{"isExternal":"false","networkRef":"network-regional","subnetworkRef":"subnet-regional"}` | The reference to the network |
 | cluster.network.isExternal | string | `"false"` | Whether the network reference is external to Config Connector (non-managed) |
 | cluster.network.subnetworkRef | string | `"subnet-regional"` | The reference to the subnet |
+| cluster.privateClusterConfig.enablePrivateEndpoint | bool | `false` | Whether the cluster endpoint should be private |
+| cluster.privateClusterConfig.enablePrivateNodes | bool | `true` | Whether the cluster nodes should be private |
+| cluster.privateClusterConfig.masterGlobalAccessConfig | object | `{"enabled":true}` | Enable global access to the GKE control plane's internal loab balancer. |
+| cluster.privateClusterConfig.masterIpv4CidrBlock | string | `"10.254.0.0/28"` | Immutable. The IP range in CIDR notation to use for the hosted master network.        |
 | cluster.servicesSecondaryRangeName | string | `"services"` | The private IP range name for services to use, this range must already exist |
 | projectId | string | `"tenant-c"` | The GCP Project ID where this cluster resides |
 
