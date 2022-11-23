@@ -41,8 +41,8 @@ spec:
 
   masterAuthorizedNetworksConfig:
     cidrBlocks:
-      - cidrBlock: {{ default "0.0.0.0/0" .Values.cluster.cidrBlock }}
-        displayName: {{ default "Whole internet" .Values.cluster.displayName }}
+      - cidrBlock: {{ default "0.0.0.0/0" .Values.cluster.masterAuthorizedNetworksConfig.cidrBlock }}
+        displayName: {{ default "Whole internet" .Values.cluster.masterAuthorizedNetworksConfig.displayName }}
 
   addonsConfig:
     configConnectorConfig:

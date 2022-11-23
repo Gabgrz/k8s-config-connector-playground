@@ -38,9 +38,8 @@ cluster:
   clusterSecondaryRangeName: pods
   servicesSecondaryRangeName: services
   masterAuthorizedNetworksConfig:
-    cidrBlocks:
-    - cidrBlock: 10.2.0.0/16
-      displayName: 'Authorized networks'
+    cidrBlock: 10.2.0.0/16
+    displayName: 'Authorized networks'
 
   addonsConfig:
     configConnectorConfig:
