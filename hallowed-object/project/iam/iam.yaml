@@ -51,7 +51,7 @@ spec:
       members:
         - serviceAccount:hallowed-object-367706.svc.id.goog[argocd/argocd-server]
         - serviceAccount:hallowed-object-367706.svc.id.goog[argocd/argocd-application-controller]
-        - serviceAccount:hallowed-object-367706.svc.id.goog[argocd/argocd-repo-server]
+        - serviceAccount:hallowed-object-367706.svc.id.goog[argocd/argo-cd-argocd-repo-server]
 ---
 # Project-level roles for IAM Service Account
 apiVersion: iam.cnrm.cloud.google.com/v1beta1
