@@ -7,3 +7,23 @@ metadata:
 spec:
   projectRef:
     external: tenant-b-368823
+---
+apiVersion: serviceusage.cnrm.cloud.google.com/v1beta1
+kind: Service
+metadata:
+  annotations:
+    cnrm.cloud.google.com/deletion-policy: "abandon"
+  name: serviceusage.googleapis.com
+spec:
+  projectRef:
+    external: tenant-b-368823
+---
+apiVersion: serviceusage.cnrm.cloud.google.com/v1beta1
+kind: Service
+metadata:
+  annotations:
+    cnrm.cloud.google.com/deletion-policy: "abandon"
+  name: cloudresourcemanager.googleapis.com
+spec:
+  projectRef:
+    external: tenant-b-368823
