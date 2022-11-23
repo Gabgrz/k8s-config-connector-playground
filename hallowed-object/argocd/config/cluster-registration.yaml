@@ -31,7 +31,7 @@ metadata:
 type: Opaque
 stringData:
   name: team-hubcluster-dev
-  server: https://container.googleapis.com/v1beta1/projects/tenant-b-368823/locations/us-central1/clusters/team-hubcluster-dev
+  server: https://connectgateway.googleapis.com/v1beta1/projects/hallowed-object-367706/locations/global/memberships/gkehubmembership-tenant-b
   config: |
     {
       "execProviderConfig": {
