@@ -1,0 +1,100 @@
+apiVersion: container.cnrm.cloud.google.com/v1beta1
+kind: ContainerCluster
+metadata:
+  annotations:
+    cnrm.cloud.google.com/remove-default-node-pool: "true"
+    cnrm.cloud.google.com/project-id: {{ .Values.projectId }}
+  name: {{ default "standard-cluster" .Values.cluster.name }}
+spec:
+  location: {{ default "us-central1" .Values.cluster.location }}
+
+  initialNodeCount: 1
+  ipAllocationPolicy:
+    clusterSecondaryRangeName: {{ default "pods" .Values.cluster.clusterSecondaryRangeName }}
+    servicesSecondaryRangeName: {{ default "services" .Values.cluster.servicesSecondaryRangeName }}
+
+  {{ if eq .Values.cluster.network.isExternal "true" }}
+  networkRef:
+    external: {{ .Values.cluster.network.networkRef }}
+  subnetworkRef:
+    external: {{ .Values.cluster.network.subnetworkRef }}
+
+  {{ else if eq .Values.cluster.network.isExternal "false" }}
+  networkRef:
+    name: {{ .Values.cluster.network.networkRef }}
+  subnetworkRef:
+    name: {{ .Values.cluster.network.subnetworkRef }}
+  {{ end }}
+
+  privateClusterConfig:
+    # Allow public access to the GKE control plane by default.
+    # This default is a deliberate compromise for ease of use over security.
+    # For increased security, set to true to disable public IP access
+    enablePrivateEndpoint: {{ default "false" .Values.cluster.privateClusterConfig.enablePrivateEndpoint }}
+    # Default to private nodes (no public IP)
+    enablePrivateNodes: {{ default "true" .Values.cluster.privateClusterConfig.enablePrivateNodes }}
+    # Enable global access to the GKE control plane's internal loab balancer.
+    # https://cloud.google.com/load-balancing/docs/internal/setting-up-internal#ilb-global-access
+    masterGlobalAccessConfig:
+      enabled: true
+    masterIpv4CidrBlock: {{ default "10.254.0.0/28" .Values.cluster.privateClusterConfig.masterIpv4CidrBlock }}
+
+  masterAuthorizedNetworksConfig:
+    cidrBlocks:
+      - cidrBlock: {{ default "0.0.0.0/0" .Values.cluster.cidrBlock }}
+        displayName: {{ default "Whole internet" .Values.cluster.displayName }}
+
+  addonsConfig:
+    configConnectorConfig:
+      enabled: {{ .Values.cluster.addonsConfig.configConnectorConfig.enabled }}
+    dnsCacheConfig:
+      enabled: {{ .Values.cluster.addonsConfig.dnsCacheConfig.enabled }}
+    gcePersistentDiskCsiDriverConfig:
+      enabled: {{ .Values.cluster.addonsConfig.gcePersistentDiskCsiDriverConfig.enabled }}
+    horizontalPodAutoscaling:
+      disabled: {{ .Values.cluster.addonsConfig.horizontalPodAutoscaling.disabled }}
+    httpLoadBalancing:
+      disabled: {{ .Values.cluster.addonsConfig.httpLoadBalancing.disabled }}
+    kalmConfig:
+      enabled: {{ .Values.cluster.addonsConfig.kalmConfig.enabled }}
+    networkPolicyConfig:
+      disabled: {{ .Values.cluster.addonsConfig.networkPolicyConfig.disabled }}
+
+  verticalPodAutoscaling:
+    enabled: true
+  identityServiceConfig:
+    enabled: true
+  workloadIdentityConfig:
+    workloadPool: {{ .Values.projectId }}.svc.id.goog
+
+---
+apiVersion: container.cnrm.cloud.google.com/v1beta1
+kind: ContainerNodePool
+metadata:
+  labels:
+    label-one: "value-one"
+  name: {{ default "containernodepool-sample-basic" .Values.nodePool.name }}
+spec:
+  location: {{ default "us-central1" .Values.nodePool.location }}
+  autoscaling:
+    minNodeCount: {{ default 1 .Values.nodePool.minNodeCount }}
+    maxNodeCount: {{ default 3 .Values.nodePool.maxNodeCount }}
+  nodeConfig:
+    machineType: {{ default "n1-standard-1" .Values.nodePool.machineType }}
+    diskSizeGb: {{ default "100" .Values.nodePool.diskSizeGb }}
+    diskType: {{ default "pd-standard" .Values.nodePool.diskType }}
+    tags:
+      - tagone
+      - tagtwo
+    preemptible: false
+    oauthScopes:
+      - "https://www.googleapis.com/auth/logging.write"
+      - "https://www.googleapis.com/auth/monitoring"
+    metadata:
+      disable-legacy-endpoints: "true"
+  management:
+    autoRepair: true
+    autoUpgrade: true
+  clusterRef:
+    name: {{ default "standard-cluster" .Values.cluster.name }}
+---
