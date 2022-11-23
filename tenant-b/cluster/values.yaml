@@ -39,8 +39,8 @@ cluster:
   servicesSecondaryRangeName: services
   masterAuthorizedNetworksConfig:
     cidrBlocks:
-    - cidrBlock: 0.0.0.0/0
-      displayName: 'Whole internet'
+    - cidrBlock: 10.2.0.0/16
+      displayName: 'Authorized networks'
 
   addonsConfig:
     configConnectorConfig:
