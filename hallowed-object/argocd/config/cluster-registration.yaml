@@ -20,3 +20,49 @@ stringData:
         "insecure": true
       }
     }
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: tenant-c-team-dev
+  namespace: argocd
+  labels:
+    argocd.argoproj.io/secret-type: cluster
+type: Opaque
+stringData:
+  name: team-dev
+  server: https://34.171.151.134
+  config: |
+    {
+      "execProviderConfig": {
+        "command": "argocd-k8s-auth",
+        "args": ["gcp"],
+        "apiVersion": "client.authentication.k8s.io/v1beta1"
+      },
+      "tlsClientConfig": {
+        "insecure": true
+      }
+    }
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: tenant-b-cluster
+  namespace: argocd
+  labels:
+    argocd.argoproj.io/secret-type: cluster
+type: Opaque
+stringData:
+  name: team-hubcluster-dev
+  server: https://10.254.0.2
+  config: |
+    {
+      "execProviderConfig": {
+        "command": "argocd-k8s-auth",
+        "args": ["gcp"],
+        "apiVersion": "client.authentication.k8s.io/v1beta1"
+      },
+      "tlsClientConfig": {
+        "insecure": true
+      }
+    }
