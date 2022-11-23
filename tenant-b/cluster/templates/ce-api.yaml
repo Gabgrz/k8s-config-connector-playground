@@ -1,7 +1,7 @@
 apiVersion: serviceusage.cnrm.cloud.google.com/v1beta1
 kind: Service
 metadata: 
-  name: tenant-d-compute
+  name: {{ .Values.projectId }}-compute
   namespace: {{ .Values.projectId }}
   annotations:
     cnrm.cloud.google.com/deletion-policy: abandon
