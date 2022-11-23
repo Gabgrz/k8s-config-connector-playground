@@ -65,3 +65,16 @@ spec:
     apiVersion: resourcemanager.cnrm.cloud.google.com/v1beta1
     kind: Project
     external: projects/tenant-c
+---
+# Project-level roles for IAM Service Account
+apiVersion: iam.cnrm.cloud.google.com/v1beta1
+kind: IAMPolicyMember
+metadata:
+  name: iampolicy-argocd-2
+spec:
+  member: serviceAccount:argocd@hallowed-object-367706.iam.gserviceaccount.com
+  role: roles/editor
+  resourceRef:
+    apiVersion: resourcemanager.cnrm.cloud.google.com/v1beta1
+    kind: Project
+    external: projects/tenant-b-368823
