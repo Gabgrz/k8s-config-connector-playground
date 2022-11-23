@@ -24,7 +24,7 @@ cluster:
   location: us-central1
 
   privateClusterConfig:
-    enablePrivateEndpoint: false
+    enablePrivateEndpoint: true
     enablePrivateNodes: true
     masterGlobalAccessConfig:
       enabled: true
@@ -46,11 +46,11 @@ cluster:
     configConnectorConfig:
       enabled: false
     dnsCacheConfig:
-      enabled: true
+      enabled: false
     gcePersistentDiskCsiDriverConfig:
-      enabled: true
+      enabled: false
     horizontalPodAutoscaling:
-      disabled: false
+      disabled: true
     httpLoadBalancing:
       disabled: false
     kalmConfig:
