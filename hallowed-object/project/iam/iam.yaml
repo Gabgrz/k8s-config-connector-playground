@@ -52,5 +52,16 @@ spec:
         - serviceAccount:hallowed-object-367706.svc.id.goog[argocd/argocd-server]
         - serviceAccount:hallowed-object-367706.svc.id.goog[argocd/argocd-application-controller]
         - serviceAccount:hallowed-object-367706.svc.id.goog[argocd/argocd-repo-server]
-
 ---
+# Project-level roles for IAM Service Account
+apiVersion: iam.cnrm.cloud.google.com/v1beta1
+kind: IAMPolicyMember
+metadata:
+  name: iampolicy-argocd-1
+spec:
+  member: serviceAccount:argocd@hallowed-object-367706.iam.gserviceaccount.com
+  role: roles/editor
+  resourceRef:
+    apiVersion: resourcemanager.cnrm.cloud.google.com/v1beta1
+    kind: Project
+    external: projects/tenant-c
