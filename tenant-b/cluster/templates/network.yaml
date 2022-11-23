@@ -19,5 +19,5 @@ spec:
   secondaryIpRange:
   - rangeName: {{ .Values.subnet.secondaryIpRange.servicesRangeName }}
     ipCidrRange: {{ .Values.subnet.secondaryIpRange.servicesIpCidrRange }}
-  - rangeName: {{ .Values.subnet.podsRangeName }}
-    ipCidrRange: {{ .Values.subnet.podsIpCidrRange }}
+  - rangeName: {{ .Values.subnet.secondaryIpRange.podsRangeName }}
+    ipCidrRange: {{ .Values.subnet.secondaryIpRange.podsIpCidrRange }}
