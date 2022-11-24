@@ -15,7 +15,7 @@ vpc:
 subnet:
   name: subnet-regional
   ipCidrRange: 10.2.0.0/16
-  region: us-central1
+  region: us-west1
   secondaryIpRange:
     servicesRangeName: services
     servicesIpCidrRange: 10.3.0.0/16
@@ -25,7 +25,7 @@ subnet:
 # GKE Cluster Configuration
 cluster:
   name: team-hubcluster-dev
-  location: us-central1-a
+  location: us-west1-a
 
   privateClusterConfig:
     enablePrivateEndpoint: true
@@ -67,7 +67,7 @@ cluster:
 # GKE Node Pool Configuration
 nodePool:
   name: custom-nodepool
-  location: us-central1-a
+  location: us-west1-a
   autoscaling:
     minNodeCount: 2
     maxNodeCount: 3
