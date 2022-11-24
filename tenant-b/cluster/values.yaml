@@ -67,7 +67,7 @@ cluster:
 # GKE Node Pool Configuration
 nodePool:
   name: custom-nodepool
-  location: us-central1
+  location: us-central1-a
   autoscaling:
     minNodeCount: 2
     maxNodeCount: 3
