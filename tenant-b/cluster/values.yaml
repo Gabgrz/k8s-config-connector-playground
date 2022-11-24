@@ -1,7 +1,7 @@
 # GCP Project ID
 projectId: tenant-b-368823
 # GCP Project Number
-projectNumber: 807921000652
+projectNumber: "807921000652"
 # GCP Host Project ID
 projectHostId: hallowed-object-367706
 
