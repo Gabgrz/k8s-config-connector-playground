@@ -84,7 +84,7 @@ spec:
     kind: Project
     external: projects/glassy-strata-370122
 
-  ---
+---
   # Argo CD Workload Identity
 apiVersion: iam.cnrm.cloud.google.com/v1beta1
 kind: IAMPolicy
