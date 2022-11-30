@@ -6,7 +6,7 @@ gke-standard:
   # Cluster configuration
   cluster:
     name: cluster-tenant-b
-    location: us-west1-a
+    location: us-central1-a
     # Private cluster configuration
     privateClusterConfig:
       enablePrivateEndpoint: true
@@ -21,7 +21,7 @@ gke-standard:
 
   # Node pool configuration
   nodePool:
-    location: us-west1-a
+    location: us-central1-a
 
   gkeHubMembership:
     enabled: "true"
