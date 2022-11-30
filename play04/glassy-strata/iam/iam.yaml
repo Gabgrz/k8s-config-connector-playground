@@ -65,7 +65,7 @@ apiVersion: iam.cnrm.cloud.google.com/v1beta1
 kind: IAMServiceAccount
 metadata:
   name: argocd
-  namespace: glassy-strata-370122  
+  namespace: glassy-strata-370122
 spec:
   displayName: Argo CD Service Account
 ---
@@ -75,6 +75,7 @@ apiVersion: iam.cnrm.cloud.google.com/v1beta1
 kind: IAMPolicyMember
 metadata:
   name: iam-owner-argocd
+  namespace: glassy-strata-370122
 spec:
   member: serviceAccount:argocd@glassy-strata-370122.iam.gserviceaccount.com	
   role: roles/owner
