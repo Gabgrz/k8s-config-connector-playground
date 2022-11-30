@@ -5,6 +5,7 @@ gke-standard:
 
   # Cluster configuration
   cluster:
+    name: cluster-tenant-b
     location: us-west1-a
     # Private cluster configuration
     privateClusterConfig:
