@@ -6,5 +6,5 @@ metadata:
   namespace: glassy-strata-370122
   annotations:
     cnrm.cloud.google.com/deletion-policy: "abandon"
-  name: {{ $value.apis }}
-  
+  name: {{ $value }}
+{{- end }}
