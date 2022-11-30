@@ -1,3 +1,4 @@
+# Config Connector Service Account permissions
 apiVersion: iam.cnrm.cloud.google.com/v1beta1
 kind: IAMPolicyMember
 metadata:
@@ -10,3 +11,20 @@ spec:
     apiVersion: resourcemanager.cnrm.cloud.google.com/v1beta1
     kind: Project
     external: projects/tenant-a-123
+---
+# Config Connector Service Account Workload Identity
+apiVersion: iam.cnrm.cloud.google.com/v1beta1
+kind: IAMPolicy
+metadata:
+  name: configconnector-workloadidentity
+  namespace: glassy-strata-370122
+spec:
+  resourceRef:
+    apiVersion: iam.cnrm.cloud.google.com/v1beta1
+    kind: IAMServiceAccount
+    name: config-connector
+  bindings:
+    - role: roles/iam.workloadIdentityUser
+      members:
+        - glassy-strata-370122.svc.id.goog[cnrm-system/cnrm-controller-manager-glassy-strata-370122]
+        - glassy-strata-370122.svc.id.goog[cnrm-system/cnrm-controller-manager-tenant-a-123]
