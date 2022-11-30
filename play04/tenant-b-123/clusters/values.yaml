@@ -23,16 +23,19 @@ gke-standard:
   nodePool:
     location: us-central1-a
 
+  # GKE Hub Membership
   gkeHubMembership:
     enabled: "true"
     hostProjectId: glassy-strata-370122
 
+  # ArgoCD Registration
   argocdRegistration:
     enabled: "true"
     projectNumber: "408298666472"
 
+  # K8s addons
   k8sAddons:
-    enabled: "false"
+    enabled: "true"
     repoUrl: https://github.com/Gabgrz/config-connector.git
     repoPath: 'play04/tenant-b-123/addons/'
     argocdProject: default
