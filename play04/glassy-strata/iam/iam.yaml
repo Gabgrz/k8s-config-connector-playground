@@ -19,3 +19,19 @@ spec:
     apiVersion: resourcemanager.cnrm.cloud.google.com/v1beta1
     kind: Project
     external: projects/glassy-strata-370122
+---
+## Workload Identity
+apiVersion: iam.cnrm.cloud.google.com/v1beta1
+kind: IAMPolicy
+metadata:
+  name: wi-config-connector
+  namespace: glassy-strata-370122  
+spec:
+  resourceRef:
+    apiVersion: iam.cnrm.cloud.google.com/v1beta1
+    kind: IAMServiceAccount
+    name: config-connector
+  bindings:
+    - role: roles/iam.workloadIdentityUser
+      members:
+        - serviceAccount:dev51-test-apps-gke-xoom-stg.svc.id.goog[cnrm-system/cnrm-controller-manager-config-connector]
