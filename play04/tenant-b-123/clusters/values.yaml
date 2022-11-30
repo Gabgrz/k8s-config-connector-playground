@@ -37,7 +37,7 @@ gke-standard:
   k8sAddons:
     enabled: "true"
     repoUrl: https://github.com/Gabgrz/config-connector.git
-    repoPath: 'play04/tenant-b-123/addons/*'
+    repoPath: play04/tenant-b-123/addons/*
     argocdProject: default
     namespace: default
 
