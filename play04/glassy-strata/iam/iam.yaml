@@ -22,7 +22,7 @@ spec:
   resourceRef:
     apiVersion: iam.cnrm.cloud.google.com/v1beta1
     kind: IAMServiceAccount
-    name: config-connector
+    external: projects/glassy-strata-370122/serviceAccounts/config-connector@glassy-strata-370122.iam.gserviceaccount.com
   bindings:
     - role: roles/iam.workloadIdentityUser
       members:
