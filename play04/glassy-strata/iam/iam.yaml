@@ -75,7 +75,7 @@ apiVersion: iam.cnrm.cloud.google.com/v1beta1
 kind: IAMPolicyMember
 metadata:
   name: iam-owner-argocd
-  namespace: glassy-strata-370122   
+  namespace: glassy-strata-370122 
 spec:
   member: serviceAccount:argocd@glassy-strata-370122.iam.gserviceaccount.com	
   role: roles/owner
@@ -83,3 +83,22 @@ spec:
     apiVersion: resourcemanager.cnrm.cloud.google.com/v1beta1
     kind: Project
     external: projects/glassy-strata-370122
+
+  ---
+  # Argo CD Workload Identity
+apiVersion: iam.cnrm.cloud.google.com/v1beta1
+kind: IAMPolicy
+metadata:
+  name: argocd-workloadidentity
+  namespace: glassy-strata-370122  
+spec:
+  resourceRef:
+    apiVersion: iam.cnrm.cloud.google.com/v1beta1
+    kind: IAMServiceAccount
+    name: argocd
+  bindings:
+    - role: roles/iam.workloadIdentityUser
+      members:
+        - serviceAccount:glassy-strata-370122.svc.id.goog[argocd/argocd-server]
+        - serviceAccount:glassy-strata-370122.svc.id.goog[argocd/argocd-application-controller]
+        - serviceAccount:glassy-strata-370122.svc.id.goog[argocd/argo-cd-argocd-repo-server]
