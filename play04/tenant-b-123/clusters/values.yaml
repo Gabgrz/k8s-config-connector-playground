@@ -24,8 +24,8 @@ gke-standard:
     location: us-west1-a
 
   gkeHubMembership:
-    enabled: "false"
-    hostProjectId: required
+    enabled: "true"
+    hostProjectId: glassy-strata-370122
 
 # VPC with subnet configuration
 vpc-subnet:
