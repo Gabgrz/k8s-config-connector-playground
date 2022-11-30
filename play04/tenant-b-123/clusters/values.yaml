@@ -23,7 +23,9 @@ gke-standard:
   nodePool:
     location: us-west1-a
 
-
+  gkeHubMembership:
+    enabled: "false"
+    hostProjectId: required
 
 # VPC with subnet configuration
 vpc-subnet:
