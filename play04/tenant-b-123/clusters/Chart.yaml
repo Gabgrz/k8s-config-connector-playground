@@ -4,8 +4,8 @@ type: application
 version: 1.0.0
 
 dependencies:
-  - name: gke-autopilot
-    version: "0.1.4"
+  - name: gke-standard
+    version: "0.1.5"
     repository: "https://gabgrz.github.io/helm-charts/"
   - name: vpc-subnet
     version: "0.1.2"

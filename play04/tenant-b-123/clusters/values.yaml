@@ -1,5 +1,27 @@
-gke-autopilot:
+# GKE Standard cluster configuration
+gke-standard:
+
   projectId: tenant-b-123
 
+  # Cluster configuration
+  cluster:
+    location: us-west1-a
+    # Private cluster configuration
+    privateClusterConfig:
+      enablePrivateEndpoint: true
+      enablePrivateNodes: true
+      masterGlobalAccessConfig:
+        enabled: true
+      masterIpv4CidrBlock: 10.254.0.0/28
+    # Authorized networks
+    masterAuthorizedNetworksConfig:
+      cidrBlock: 10.2.0.0/16
+      displayName: 'Authorized networks'
+
+  # Node pool configuration
+  nodePool:
+    location: us-west1-a
+
+# VPC with subnet configuration
 vpc-subnet:
   projectId: tenant-b-123
