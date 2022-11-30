@@ -1,0 +1,12 @@
+apiVersion: v2
+name: gke-stack
+type: application
+version: 1.0.0
+
+dependencies:
+  - name: gke-autopilot
+    version: "0.1.4"
+    repository: "https://gabgrz.github.io/helm-charts/"
+  - name: vpc-subnet
+    version: "0.1.2"
+    repository: "https://gabgrz.github.io/helm-charts/"

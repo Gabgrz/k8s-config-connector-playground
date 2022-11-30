@@ -1,0 +1,5 @@
+gke-autopilot:
+  projectId: tenant-b-123
+
+vpc-subnet:
+  projectId: tenant-b-123
