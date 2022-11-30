@@ -5,3 +5,4 @@ apis:
   - gkehub.googleapis.com
   - connectgateway.googleapis.com
   - cloudresourcemanager.googleapis.com
+  - cloudbuild.googleapis.com
