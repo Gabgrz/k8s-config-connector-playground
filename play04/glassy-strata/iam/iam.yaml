@@ -45,3 +45,16 @@ spec:
     apiVersion: resourcemanager.cnrm.cloud.google.com/v1beta1
     kind: Project
     external: projects/glassy-strata-370122
+---
+apiVersion: iam.cnrm.cloud.google.com/v1beta1
+kind: IAMPolicyMember
+metadata:
+  name: iam-sa-gkehub-tenant-b-123
+  namespace: glassy-strata-370122
+spec:
+  member: serviceAccount:service-408298666472@gcp-sa-gkehub.iam.gserviceaccount.com
+  role: roles/gkehub.serviceAgent
+  resourceRef:
+    apiVersion: resourcemanager.cnrm.cloud.google.com/v1beta1
+    kind: Project
+    external: projects/tenant-b-123
