@@ -4,3 +4,10 @@ metadata:
   annotations:
     cnrm.cloud.google.com/project-id: glassy-strata-370122
   name: glassy-strata-370122
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  annotations:
+    cnrm.cloud.google.com/project-id: tenant-a-123
+  name: tenant-a-123
