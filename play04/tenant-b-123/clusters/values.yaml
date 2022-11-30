@@ -23,10 +23,7 @@ gke-standard:
   nodePool:
     location: us-west1-a
 
-  # GKE Hub Membership
-  gkeHubMembership:
-    enabled: "false"
-    hostProjectId: glassy-strata-370122
+
 
 # VPC with subnet configuration
 vpc-subnet:
