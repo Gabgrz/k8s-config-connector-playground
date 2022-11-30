@@ -12,6 +12,7 @@ spec:
     kind: Project
     external: projects/tenant-a-123
 ---
+
 # Config Connector Service Account Workload Identity
 apiVersion: iam.cnrm.cloud.google.com/v1beta1
 kind: IAMPolicy
@@ -29,3 +30,18 @@ spec:
         - serviceAccount:glassy-strata-370122.svc.id.goog[cnrm-system/cnrm-controller-manager-glassy-strata-370122]
         - serviceAccount:glassy-strata-370122.svc.id.goog[cnrm-system/cnrm-controller-manager-tenant-a-123]
         - serviceAccount:glassy-strata-370122.svc.id.goog[cnrm-system/cnrm-controller-manager-tenant-b-123]
+---
+
+# GKE Hub Servie Agent roles
+apiVersion: iam.cnrm.cloud.google.com/v1beta1
+kind: IAMPolicyMember
+metadata:
+  name: iam-sa-gkehub-glassy-strata
+  namespace: glassy-strata-370122
+spec:
+  member: serviceAccount:service-glassy-strata-370122@gcp-sa-gkehub.iam.gserviceaccount.com
+  role: roles/gkehub.serviceAgent
+  resourceRef:
+    apiVersion: resourcemanager.cnrm.cloud.google.com/v1beta1
+    kind: Project
+    external: projects/glassy-strata-370122
