@@ -3,7 +3,7 @@
 apiVersion: serviceusage.cnrm.cloud.google.com/v1beta1
 kind: Service
 metadata:
-  namespace: {{ .Values.project_id }}
+  namespace: {{ $.Values.projectId }}
   annotations:
     cnrm.cloud.google.com/deletion-policy: "abandon"
   name: {{ $value }}
