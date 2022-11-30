@@ -1,4 +1,7 @@
 projectId: glassy-strata-370122
 apis:
   - cloudkms.googleapis.com
+  - gkeconnect.googleapis.com  
   - gkehub.googleapis.com
+  - connectgateway.googleapis.com
+  - cloudresourcemanager.googleapis.com
