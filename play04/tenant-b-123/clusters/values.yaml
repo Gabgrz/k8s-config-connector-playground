@@ -28,7 +28,7 @@ gke-standard:
     hostProjectId: glassy-strata-370122
 
   argocdRegistration:
-    enabled: "false"
+    enabled: "true"
     projectNumber: "408298666472"
 
 # VPC with subnet configuration
