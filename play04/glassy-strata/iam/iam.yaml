@@ -1,0 +1,21 @@
+# Config Connector Service Account
+apiVersion: iam.cnrm.cloud.google.com/v1beta1
+kind: IAMServiceAccount
+metadata:
+  name: config-connector
+  namespace: glassy-strata-370122
+spec:
+  displayName: Config Connector Service Account
+---
+apiVersion: iam.cnrm.cloud.google.com/v1beta1
+kind: IAMPolicyMember
+metadata:
+  name: iam-owner-config-connector
+  namespace: glassy-strata-370122
+spec:
+  member: serviceAccount:config-connector@glassy-strata-370122.iam.gserviceaccount.com
+  role: roles/owner
+  resourceRef:
+    apiVersion: resourcemanager.cnrm.cloud.google.com/v1beta1
+    kind: Project
+    external: projects/glassy-strata-370122
