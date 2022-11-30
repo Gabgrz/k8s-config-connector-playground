@@ -1,3 +1,4 @@
+projectId: cloudkms.googleapis.com
 apis:
   - cloudkms.googleapis.com
   - gkehub.googleapis.com

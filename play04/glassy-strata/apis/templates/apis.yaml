@@ -3,7 +3,7 @@
 apiVersion: serviceusage.cnrm.cloud.google.com/v1beta1
 kind: Service
 metadata:
-  namespace: glassy-strata-370122
+  namespace: {{ .Values.project_id }}
   annotations:
     cnrm.cloud.google.com/deletion-policy: "abandon"
   name: {{ $value }}
