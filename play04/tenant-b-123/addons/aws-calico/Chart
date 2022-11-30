@@ -1,0 +1,9 @@
+apiVersion: v2
+name: aws-calico
+type: application
+version: 1.0.0
+
+dependencies:
+  - name: aws-calico
+    version: "0.3.11"
+    repository: "https://aws.github.io/eks-charts"

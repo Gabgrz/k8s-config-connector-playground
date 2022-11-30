@@ -1,0 +1,9 @@
+apiVersion: v2
+name: appmesh-jaeger
+type: application
+version: 1.0.0
+
+dependencies:
+  - name: appmesh-jaeger
+    version: "1.0.3"
+    repository: "https://aws.github.io/eks-charts"

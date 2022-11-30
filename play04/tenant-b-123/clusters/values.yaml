@@ -31,6 +31,13 @@ gke-standard:
     enabled: "true"
     projectNumber: "408298666472"
 
+  k8sAddons:
+    enabled: "false"
+    repoUrl: https://github.com/Gabgrz/config-connector.git
+    repoPath: 'play04/tenant-b-123/addons/'
+    argocdProject: default
+    namespace: default
+
 # VPC with subnet configuration
 vpc-subnet:
   projectId: tenant-b-123

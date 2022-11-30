@@ -1,0 +1,2 @@
+appmesh-jaeger:
+  replicaCount: 4
