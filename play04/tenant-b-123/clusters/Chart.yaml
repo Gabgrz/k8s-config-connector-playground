@@ -4,9 +4,12 @@ type: application
 version: 1.0.0
 
 dependencies:
-  - name: gke-standard
-    version: "0.2.7"
-    repository: "https://gabgrz.github.io/helm-charts/"
   - name: vpc-subnet
     version: "0.1.2"
+    repository: "https://gabgrz.github.io/helm-charts/"
+  - name: gke-standard
+    version: "0.2.8"
+    repository: "https://gabgrz.github.io/helm-charts/"
+  - name: cluster-registration
+    version: "0.1.0"
     repository: "https://gabgrz.github.io/helm-charts/"

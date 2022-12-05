@@ -1,11 +1,17 @@
+# Global values
+global:
+  projectId: tenant-b-123
+  clusterName: cluster-tenant-b
+
+# VPC with subnet configuration
+vpc-subnet:
+  projectId: tenant-b-123  
+
 # GKE Standard cluster configuration
 gke-standard:
 
-  projectId: tenant-b-123
-
   # Cluster configuration
   cluster:
-    name: cluster-tenant-b
     location: us-central1-a
     # Private cluster configuration
     privateClusterConfig:
@@ -23,6 +29,16 @@ gke-standard:
   nodePool:
     location: us-central1-a
 
+  # K8s addons
+  k8sAddons:
+    enabled: "true"
+    repoUrl: https://github.com/Gabgrz/config-connector.git
+    repoPath: play04/tenant-b-123/addons/*
+    argocdProject: default
+    namespace: default
+
+# GKE Standard cluster configuration
+cluster-registration:
   # GKE Hub Membership
   gkeHubMembership:
     enabled: "true"
@@ -32,15 +48,3 @@ gke-standard:
   argocdRegistration:
     enabled: "true"
     projectNumber: "408298666472"
-
-  # K8s addons
-  k8sAddons:
-    enabled: "true"
-    repoUrl: https://github.com/Gabgrz/config-connector.git
-    repoPath: play04/tenant-b-123/addons/*
-    argocdProject: default
-    namespace: default
-
-# VPC with subnet configuration
-vpc-subnet:
-  projectId: tenant-b-123
