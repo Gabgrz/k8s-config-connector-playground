@@ -1,5 +1,5 @@
-gke-autopilot:
-  projectId: tenant-a-123
+global:
+  projectId: tenant-a-123  
 
 vpc-subnet:
   projectId: tenant-a-123
