@@ -2,6 +2,8 @@
 global:
   projectId: tenant-b-123
   clusterName: cluster-tenant-b
+  hostProjectId: glassy-strata-370122
+  hostProjectNumber: "408298666472"
 
 # VPC with subnet configuration
 vpc-subnet:
@@ -42,9 +44,7 @@ cluster-registration:
   # GKE Hub Membership
   gkeHubMembership:
     enabled: "true"
-    hostProjectId: glassy-strata-370122
 
   # ArgoCD Registration
   argocdRegistration:
     enabled: "true"
-    projectNumber: "408298666472"
