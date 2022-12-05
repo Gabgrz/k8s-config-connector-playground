@@ -1,5 +1,2 @@
 global:
-  projectId: tenant-a-123  
-
-vpc-subnet:
   projectId: tenant-a-123
