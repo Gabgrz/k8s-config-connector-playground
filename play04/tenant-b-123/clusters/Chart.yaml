@@ -8,7 +8,7 @@ dependencies:
     version: "0.1.2"
     repository: "https://gabgrz.github.io/helm-charts/"
   - name: gke-standard
-    version: "0.3.0"
+    version: "0.3.1"
     repository: "https://gabgrz.github.io/helm-charts/"
   - name: cluster-registration
     version: "0.1.1"
