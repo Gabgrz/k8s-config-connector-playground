@@ -13,3 +13,6 @@ dependencies:
   - name: cluster-registration
     version: "0.1.2"
     repository: "https://gabgrz.github.io/helm-charts/"
+  - name: k8s-addons
+    version: "0.1.0"
+    repository: "https://gabgrz.github.io/helm-charts/"

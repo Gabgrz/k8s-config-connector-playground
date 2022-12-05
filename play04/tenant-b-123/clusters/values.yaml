@@ -31,14 +31,6 @@ gke-standard:
   nodePool:
     location: us-central1-a
 
-  # K8s addons
-  k8sAddons:
-    enabled: "true"
-    repoUrl: https://github.com/Gabgrz/config-connector.git
-    repoPath: play04/tenant-b-123/addons/*
-    argocdProject: default
-    namespace: default
-
 # GKE Standard cluster configuration
 cluster-registration:
   # GKE Hub Membership
@@ -48,3 +40,12 @@ cluster-registration:
   # ArgoCD Registration
   argocdRegistration:
     enabled: "true"
+
+k8s-addons:
+  # K8s addons
+  k8sAddons:
+    enabled: "true"
+    repoUrl: https://github.com/Gabgrz/config-connector.git
+    repoPath: play04/tenant-b-123/addons/*
+    argocdProject: default
+    namespace: default
