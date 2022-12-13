@@ -11,7 +11,7 @@ dependencies:
     version: "0.3.2"
     repository: "https://gabgrz.github.io/helm-charts/"
   - name: gke-nodepool
-    version: "0.1.1"
+    version: "0.1.0"
     repository: "https://gabgrz.github.io/helm-charts/"    
   - name: cluster-registration
     version: "0.1.2"
