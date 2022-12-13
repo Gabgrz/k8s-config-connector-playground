@@ -24,6 +24,7 @@ gke-standard:
       displayName: 'Authorized networks'
 
   # Node pool configuration
+gke-nodepool:
   nodePool:
     location: us-central1-a
 
