@@ -8,8 +8,8 @@ global:
 # API Services enablement
 services:
   apis:
-    - compute.googleapis.com
     - container.googleapis.com
+    - compute.googleapis.com    
 
 # GKE Standard cluster configuration
 gke-standard:
