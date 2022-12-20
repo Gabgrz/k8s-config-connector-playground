@@ -4,6 +4,9 @@ type: application
 version: 1.0.0
 
 dependencies:
+  - name: services
+    version: "0.1.1"
+    repository: "https://gabgrz.github.io/helm-charts/"
   - name: vpc-subnet
     version: "0.1.3"
     repository: "https://gabgrz.github.io/helm-charts/"

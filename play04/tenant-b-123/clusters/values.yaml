@@ -5,6 +5,11 @@ global:
   hostProjectId: glassy-strata-370122
   hostProjectNumber: "408298666472"
 
+# API Services enablement
+services:
+  apis:
+    - container.googleapis.com
+
 # GKE Standard cluster configuration
 gke-standard:
 
