@@ -9,7 +9,7 @@ global:
 services:
   apis:
     - container.googleapis.com
-    - compute.googleapis.com    
+    - compute.googleapis.com
 
 # GKE Standard cluster configuration
 gke-standard:
