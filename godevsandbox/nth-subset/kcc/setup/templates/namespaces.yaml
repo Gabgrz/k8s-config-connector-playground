@@ -1,0 +1,14 @@
+{{- range $key, $value := .Values.namespaces }}
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  annotations:
+{{- if eq $value.scope "project" }}
+    cnrm.cloud.google.com/project-id: {{ $value.resourceId }}
+  {{- end }}
+  {{- if eq $value.scope "folder" }}
+    cnrm.cloud.google.com/folder-id: {{ $value.resourceId }}
+  {{- end }}  
+  name: {{ $key }}
+{{- end }}

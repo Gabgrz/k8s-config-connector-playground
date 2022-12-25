@@ -1,0 +1,10 @@
+apiVersion: v2
+name: kcc-setup
+description: A Helm Chart for configuring Kubernetes Config Connector (KCC)
+type: application
+version: 0.1.1
+appVersion: "0.1.1"
+maintainers:
+  - email: gab.120gg@gmail.com
+    name: Gabriel Garoz
+    url: 
