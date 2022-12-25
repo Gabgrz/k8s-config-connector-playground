@@ -8,7 +8,7 @@ metadata:
     cnrm.cloud.google.com/project-id: {{ $value.resourceId }}
   {{- end }}
   {{- if eq $value.scope "folder" }}
-    cnrm.cloud.google.com/folder-id: {{ $value.resourceId | int }}
+    cnrm.cloud.google.com/folder-id: {{ quote $value.resourceId }}
   {{- end }}  
   name: {{ $key }}
 {{- end }}
