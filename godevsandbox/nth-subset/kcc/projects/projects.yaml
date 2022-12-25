@@ -6,8 +6,9 @@ metadata:
   labels:
     label-one: "value-one"
   name: tomatoes-123
+  namespace: development
 spec:
   name: Project tomatoes
-  folderRef:
+  #folderRef:
     # Replace "${FOLDER_ID?}" with the numeric ID of the parent folder
-    external: "303252985095"
+    #external: "303252985095"
