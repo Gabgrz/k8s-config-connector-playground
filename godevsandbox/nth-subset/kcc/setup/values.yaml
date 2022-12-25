@@ -4,7 +4,7 @@ namespaces:
     scope: folder
     resourceId: "303252985095"
     googleServiceAccount: folder-admin@nth-subset-372600.iam.gserviceaccount.com
-  nth-subset:
+  nth-subset-372600:
     scope: project
     resourceId: "nth-subset-372600"
     googleServiceAccount: folder-admin@nth-subset-372600.iam.gserviceaccount.com
