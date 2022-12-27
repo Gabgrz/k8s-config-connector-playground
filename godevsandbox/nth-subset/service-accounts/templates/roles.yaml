@@ -4,7 +4,7 @@
 apiVersion: iam.cnrm.cloud.google.com/v1beta1
 kind: IAMPolicyMember
 metadata:
-  name: role-{{ $sa }}-{{ randAlphaNum 5}}
+  name: role-{{ $sa }}-{{ randNumeric 5}}
   namespace: nth-subset-372600
 spec:
   member: serviceAccount:{{ $sa }}@nth-subset-372600.iam.gserviceaccount.com
