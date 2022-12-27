@@ -1,5 +1,5 @@
 {{- range $sa, $value := .Values.serviceAccounts }}
-{{- range $folderRoles, $role := $value.roles }}
+{{- range $folderRoles, $role := $value.folderRoles }}
 ---
 apiVersion: iam.cnrm.cloud.google.com/v1beta1
 kind: IAMPolicyMember
