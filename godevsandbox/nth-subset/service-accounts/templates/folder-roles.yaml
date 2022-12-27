@@ -1,0 +1,17 @@
+{{- range $sa, $value := .Values.serviceAccounts }}
+{{- range $folderRoles, $role := $value.roles }}
+---
+apiVersion: iam.cnrm.cloud.google.com/v1beta1
+kind: IAMPolicyMember
+metadata:
+  name: role-{{ $sa }}-{{ randNumeric 5}}
+  namespace: nth-subset-372600
+spec:
+  member: serviceAccount:{{ $sa }}@nth-subset-372600.iam.gserviceaccount.com
+  role: roles/{{ $role }}
+  resourceRef:
+    apiVersion: resourcemanager.cnrm.cloud.google.com/v1beta1
+    kind: Folder
+    external: folders/303252985095
+{{- end }}    
+{{- end }}
