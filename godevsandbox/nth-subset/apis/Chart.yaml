@@ -1,0 +1,9 @@
+apiVersion: v2
+name: apis
+type: application
+version: 1.0.0
+
+dependencies:
+  - name: services
+    version: "0.1.4"
+    repository: "https://gabgrz.github.io/helm-charts/"

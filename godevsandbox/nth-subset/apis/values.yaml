@@ -1,0 +1,10 @@
+global:
+  projectId: nth-subset-372600
+
+services:
+  apis:
+  - cloudkms.googleapis.com
+  - gkeconnect.googleapis.com  
+  - gkehub.googleapis.com
+  - connectgateway.googleapis.com
+  - cloudresourcemanager.googleapis.com
