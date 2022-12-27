@@ -1,0 +1,16 @@
+serviceAccounts:
+  argocd:
+    create: true
+    displayName: Argo CD service account
+    roles:
+      - owner
+  crossplane:
+    create: true  
+    displayName: Crossplane service account
+    roles:    
+      - owner
+      - editor
+  folder-admin:
+    create: false
+    roles:    
+      - resourcemanager.projectCreator

@@ -1,0 +1,17 @@
+{{- range $sa, $value := .Values.serviceAccounts }}
+{{- range $roles, $role := $value.roles }}
+---
+apiVersion: iam.cnrm.cloud.google.com/v1beta1
+kind: IAMPolicyMember
+metadata:
+  name: iam-sa-gkehub-glassy-strata
+  namespace: 
+spec:
+  member: serviceAccount:{{ $sa }}@nth-subset-372600.iam.gserviceaccount.com
+  role: {{ $role }}
+  resourceRef:
+    apiVersion: resourcemanager.cnrm.cloud.google.com/v1beta1
+    kind: Project
+    external: projects/nth-subset-372600
+{{- end }}    
+{{- end }}

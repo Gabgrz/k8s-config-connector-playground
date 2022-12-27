@@ -1,0 +1,10 @@
+serviceAccounts:
+  argocd:
+    displayName: Argo CD service account
+    roles:
+      - roles/owner
+  crossplane:
+    displayName: Crossplane service account
+    roles:    
+      - roles/owner
+      - roles/editor
