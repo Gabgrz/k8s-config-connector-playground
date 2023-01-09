@@ -5,5 +5,5 @@ version: 1.0.0
 
 dependencies:
   - name: gcp-service-accounts
-    version: "0.1.1"
+    version: "0.1.2"
     repository: "https://gabgrz.github.io/helm-charts/"
