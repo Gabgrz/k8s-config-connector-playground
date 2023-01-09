@@ -3,6 +3,6 @@ global:
   folderId: "303252985095"
 
 serviceAccounts:
-  argocd:
+  testsa:
     create: true
-    displayName: Argo CD service account
+    displayName: Test service account

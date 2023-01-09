@@ -1,6 +1,0 @@
-dependencies:
-- name: gcp-service-accounts
-  repository: https://gabgrz.github.io/helm-charts/
-  version: 0.1.5
-digest: sha256:d2801b2f22fc328987bbb260c26d517b2b5bd40714c39f15ac70fa144052e7c9
-generated: "2023-01-09T14:41:27.299583-06:00"
