@@ -6,10 +6,3 @@ serviceAccounts:
   argocd:
     create: true
     displayName: Argo CD service account
-    projectRoles:
-      - container.developer
-      - gkehub.gatewayReader
-  folder-admin:
-    create: false
-    folderRoles:
-      - resourcemanager.projectCreator
