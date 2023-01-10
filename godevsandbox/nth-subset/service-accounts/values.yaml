@@ -2,7 +2,11 @@ global:
   projectId: nth-subset-372600
   folderId: "303252985095"
 
-serviceAccounts:
-  testsa:
-    create: true
-    displayName: Test service account
+gcp-service-accounts:
+  serviceAccounts:
+    testsa:
+      create: true
+      displayName: Test service account
+    argocd:
+      create: true
+      displayName: ArgoCD service account
