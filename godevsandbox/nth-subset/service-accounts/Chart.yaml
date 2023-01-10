@@ -5,5 +5,5 @@ version: 1.0.0
 
 dependencies:
   - name: iam-service-account
-    version: "0.1.7"
+    version: "0.1.8"
     repository: "https://gabgrz.github.io/helm-charts/"
