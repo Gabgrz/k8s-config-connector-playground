@@ -10,3 +10,6 @@ iam-service-account:
     argocd:
       create: true
       displayName: ArgoCD service account
+      projectRoles:
+        - container.developer
+        - gkehub.gatewayReader
