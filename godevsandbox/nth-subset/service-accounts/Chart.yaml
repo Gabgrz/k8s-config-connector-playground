@@ -4,6 +4,6 @@ type: application
 version: 1.0.0
 
 dependencies:
-  - name: gcp-service-accounts
-    version: "0.1.6"
+  - name: iam-service-account
+    version: "0.1.7"
     repository: "https://gabgrz.github.io/helm-charts/"
