@@ -1,15 +1,14 @@
 global:
   projectId: nth-subset-372600
-  folderId: "303252985095"
 
 iam-service-account:
   principals:
-    crossplane:
-      create: true
-      displayName: Crossplane service account
     argocd:
       create: true
       displayName: ArgoCD service account
       projectRoles:
         - container.developer
         - gkehub.gatewayReader
+    crossplane:
+      create: true
+      displayName: Crossplane service account
