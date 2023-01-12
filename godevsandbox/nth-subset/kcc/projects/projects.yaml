@@ -29,19 +29,3 @@ spec:
   #folderRef:
     # Replace "${FOLDER_ID?}" with the numeric ID of the parent folder
     #external: "303252985095"
----
-# Requires SA to have permissions over Folder
-apiVersion: resourcemanager.cnrm.cloud.google.com/v1beta1
-kind: Project
-metadata:
-  annotations:
-    cnrm.cloud.google.com/auto-create-network: "true"
-  labels:
-    label-one: "value-one"
-  name: pears-123
-  namespace: development
-spec:
-  name: Project pears
-  #folderRef:
-    # Replace "${FOLDER_ID?}" with the numeric ID of the parent folder
-    #external: "303252985095"
