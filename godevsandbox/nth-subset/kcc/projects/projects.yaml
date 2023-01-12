@@ -38,7 +38,7 @@ metadata:
     cnrm.cloud.google.com/auto-create-network: "true"
   labels:
     label-one: "value-one"
-  name: banana-123
+  name: banana-123123123
   namespace: development
 spec:
   name: Project bananas
