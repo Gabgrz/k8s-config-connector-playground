@@ -12,4 +12,4 @@ namespaces:
   apples-123:
     scope: project
     resourceId: "apples-123"
-    googleServiceAccount: apples-123@apples-123iam.gserviceaccount.com
+    googleServiceAccount: folder-admin@nth-subset-372600.iam.gserviceaccount.com
