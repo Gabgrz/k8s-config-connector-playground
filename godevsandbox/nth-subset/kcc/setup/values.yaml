@@ -8,3 +8,8 @@ namespaces:
     scope: project
     resourceId: "nth-subset-372600"
     googleServiceAccount: folder-admin@nth-subset-372600.iam.gserviceaccount.com
+  # Namespace name should match Project ID
+  apples-123:
+    scope: project
+    resourceId: "apples-123"
+    googleServiceAccount: apples-123@apples-123iam.gserviceaccount.com
