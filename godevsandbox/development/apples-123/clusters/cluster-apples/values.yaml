@@ -2,6 +2,10 @@ global:
   projectId: apples-123
   clusterName: gke-cluster-dev
 
+# VPC configuration
+vpc-subnet:
+  region: us-west1
+
 # GKE Standard cluster configuration
 gke-standard:
 
@@ -29,4 +33,4 @@ gke-nodepool:
     nodeConfig: 
       machineType:
       diskType:
-      diskSizeGb:
+      diskSizeGb: 
