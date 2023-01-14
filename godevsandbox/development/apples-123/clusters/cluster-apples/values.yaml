@@ -1,0 +1,32 @@
+global:
+  projectId: apples-123
+  clusterName: gke-cluster-dev
+
+# GKE Standard cluster configuration
+gke-standard:
+
+  cluster:
+    location: us-west1-a
+    # Private cluster configuration
+    privateClusterConfig:
+      enablePrivateEndpoint: true
+      enablePrivateNodes: true
+      masterGlobalAccessConfig:
+        enabled: true
+      masterIpv4CidrBlock: 10.254.0.0/28
+    # Authorized networks
+    masterAuthorizedNetworksConfig:
+      cidrBlock: 10.2.0.0/16
+      displayName: 'Authorized networks'
+
+# Node pool configuration
+gke-nodepool:
+  nodePool:
+    location: us-west1-a
+    autoscaling:
+      minNodeCount: 1
+      maxNodeCount: 1
+    nodeConfig: 
+      machineType:
+      diskType:
+      diskSizeGb:

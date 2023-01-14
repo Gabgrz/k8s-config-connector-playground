@@ -1,0 +1,12 @@
+apiVersion: v2
+name: cluster-apples
+type: application
+version: 1.0.0
+
+dependencies:
+  - name: gke-standard
+    version: "0.1.4"
+    repository: "https://gabgrz.github.io/helm-charts/"
+  - name: gke-nodepool
+    version: "0.1.4"
+    repository: "https://gabgrz.github.io/helm-charts/"
