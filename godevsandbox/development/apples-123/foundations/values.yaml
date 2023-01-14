@@ -6,4 +6,4 @@ services:
   apis:
     - compute.googleapis.com
     - container.googleapis.com
-    - binaryauthorization.googleapis.co
+    - binaryauthorization.googleapis.com
