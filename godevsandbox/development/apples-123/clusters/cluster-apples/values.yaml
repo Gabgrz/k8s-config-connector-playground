@@ -4,7 +4,8 @@ global:
 
 # VPC configuration
 vpc-subnet:
-  region: us-west1
+  subnet:
+    region: us-west1
 
 # GKE Standard cluster configuration
 gke-standard:
