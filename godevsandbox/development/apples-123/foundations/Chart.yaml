@@ -1,0 +1,12 @@
+apiVersion: v2
+name: apple-123-foundations
+type: application
+version: 1.0.0
+
+dependencies:
+  - name: services
+    version: "0.1.4"
+    repository: "https://gabgrz.github.io/helm-charts/"
+  - name: iam-service-accounts
+    version: "0.2.0"
+    repository: "https://gabgrz.github.io/helm-charts/"

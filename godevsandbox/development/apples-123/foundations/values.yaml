@@ -1,0 +1,9 @@
+global:
+  projectId: apples-123
+
+# APIs enablement
+services:
+  apis:
+    - compute.googleapis.com
+    - container.googleapis.com
+    - binaryauthorization.googleapis.co
