@@ -23,6 +23,7 @@ gke-standard:
     masterAuthorizedNetworksConfig:
       cidrBlock: 10.2.0.0/16
       displayName: 'Authorized networks'
+    enableIntranodeVisibility: true
 
 # Node pool configuration
 gke-nodepool:
@@ -31,7 +32,7 @@ gke-nodepool:
     autoscaling:
       minNodeCount: 1
       maxNodeCount: 1
-    nodeConfig: 
+    nodeConfig:
       machineType:
       diskType:
-      diskSizeGb: 
+      diskSizeGb:
