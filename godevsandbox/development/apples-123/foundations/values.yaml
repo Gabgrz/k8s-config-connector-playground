@@ -7,3 +7,4 @@ services:
     - compute.googleapis.com
     - container.googleapis.com
     - binaryauthorization.googleapis.com
+    - cloudkms.googleapis.com
