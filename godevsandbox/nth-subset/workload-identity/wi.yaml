@@ -6,7 +6,7 @@ metadata:
   namespace: nth-subset-372600
 spec:
   resourceRef:
-    apiVersion: resourcemanager.cnrm.cloud.google.com/v1beta1
+    apiVersion: iam.cnrm.cloud.google.com/v1beta1
     kind: IAMServiceAccount
     external: projects/nth-subset-372600/serviceAccounts/folder-admin@nth-subset-372600.iam.gserviceaccount.com
   bindings:
