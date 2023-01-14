@@ -3,6 +3,7 @@ kind: KMSCryptoKey
 metadata:
   labels:
     key-one: value-one
+  namespace: nth-subset-372600    
   name: kmscryptokey-sample
 spec:
   keyRingRef:
