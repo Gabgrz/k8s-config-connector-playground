@@ -1,4 +1,18 @@
 apiVersion: kms.cnrm.cloud.google.com/v1beta1
+kind: KMSCryptoKey
+metadata:
+  labels:
+    key-one: value-one
+  name: kmscryptokey-sample
+spec:
+  keyRingRef:
+    name: kmskeyring-sample
+  purpose: ENCRYPT_DECRYPT
+  versionTemplate:
+    protectionLevel: SOFTWARE
+  importOnly: false
+---
+apiVersion: kms.cnrm.cloud.google.com/v1beta1
 kind: KMSKeyRing
 metadata:
   name: kmskeyring-sample
