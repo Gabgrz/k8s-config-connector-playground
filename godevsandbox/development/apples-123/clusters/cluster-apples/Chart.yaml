@@ -8,7 +8,7 @@ dependencies:
     version: "0.1.4"
     repository: "https://gabgrz.github.io/helm-charts/"
   - name: gke-standard
-    version: "0.3.6"
+    version: "0.3.7"
     repository: "https://gabgrz.github.io/helm-charts/"
   - name: gke-nodepool
     version: "0.1.2"
