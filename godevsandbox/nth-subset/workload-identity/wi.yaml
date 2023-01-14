@@ -1,0 +1,17 @@
+## Workload Identity
+apiVersion: iam.cnrm.cloud.google.com/v1beta1
+kind: IAMPolicy
+metadata:
+  name: folder-admin-wi
+  namespace: nth-subset-372600
+spec:
+  resourceRef:
+    apiVersion: iam.cnrm.cloud.google.com/v1beta1
+    kind: IAMServiceAccount
+    name: folder-admin
+  bindings:
+    - role: roles/iam.workloadIdentityUser
+      members:
+        - serviceAccount:nth-subset-372600.svc.id.goog[cnrm-system/cnrm-controller-manager-development]
+        - serviceAccount:nth-subset-372600.svc.id.goog[cnrm-system/cnrm-controller-manager-nth-subset-372600]
+        - serviceAccount:nth-subset-372600.svc.id.goog[cnrm-system/cnrm-controller-manager-apples-123]
