@@ -2,7 +2,7 @@
 apiVersion: iam.cnrm.cloud.google.com/v1beta1
 kind: IAMPolicy
 metadata:
-  name: folder-admin-wi
+  name: folder-admin-wii
   namespace: nth-subset-372600
 spec:
   resourceRef:
