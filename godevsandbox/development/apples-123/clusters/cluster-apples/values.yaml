@@ -38,7 +38,7 @@ gke-nodepool:
       diskSizeGb:
 
 # Node pool 2 configuration
-gke-nodepool:
+gke-safenodepool:
   nodePool:
     name: encrypted-nodepool
     location: us-west1-a
