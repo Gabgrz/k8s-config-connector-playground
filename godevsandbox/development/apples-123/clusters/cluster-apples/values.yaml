@@ -49,3 +49,4 @@ gke-safenodepool:
       machineType:
       diskType:
       diskSizeGb:
+      bootDiskKMSCryptoKeyRef: "projects/nth-subset-372600/locations/us-west1/keyRings/kmskeyring-sample/cryptoKeys/kmscryptokey-sample"
