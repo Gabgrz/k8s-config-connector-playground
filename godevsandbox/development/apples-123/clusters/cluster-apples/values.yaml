@@ -25,9 +25,22 @@ gke-standard:
       displayName: 'Authorized networks'
     enableIntranodeVisibility: true
     
-# Node pool configuration
+# Node pool 1 configuration
 gke-nodepool:
   nodePool:
+    location: us-west1-a
+    autoscaling:
+      minNodeCount: 1
+      maxNodeCount: 1
+    nodeConfig:
+      machineType:
+      diskType:
+      diskSizeGb:
+
+# Node pool 2 configuration
+gke-nodepool:
+  nodePool:
+    name: encrypted-nodepool
     location: us-west1-a
     autoscaling:
       minNodeCount: 1
