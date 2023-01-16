@@ -63,4 +63,4 @@ spec:
   enableIntranodeVisibility: true
 
   binaryAuthorization:
-    evaluationMode: 2
+    enabled: true
