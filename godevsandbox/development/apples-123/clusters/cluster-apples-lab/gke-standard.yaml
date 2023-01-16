@@ -31,7 +31,7 @@ spec:
     # https://cloud.google.com/load-balancing/docs/internal/setting-up-internal#ilb-global-access
     masterGlobalAccessConfig:
       enabled: true
-    masterIpv4CidrBlock: 10.254.0.0/28
+    masterIpv4CidrBlock: 10.254.0.16/28
 
   masterAuthorizedNetworksConfig:
     cidrBlocks:
