@@ -1,0 +1,66 @@
+# Source: cluster-apples/charts/gke-standard/templates/cluster-standard.yaml
+apiVersion: container.cnrm.cloud.google.com/v1beta1
+kind: ContainerCluster
+metadata:
+  annotations:
+    cnrm.cloud.google.com/remove-default-node-pool: "true"
+    cnrm.cloud.google.com/project-id: apples-123
+  name: gke-cluster-dev-lab
+  namespace: apples-123
+spec:
+  location: us-west1-a
+
+  initialNodeCount: 1
+  ipAllocationPolicy:
+    clusterSecondaryRangeName: pods
+    servicesSecondaryRangeName: services
+
+  networkRef:
+    name: network-regional
+  subnetworkRef:
+    name: subnet-regional
+  
+  privateClusterConfig:
+    # Allow public access to the GKE control plane by default.
+    # This default is a deliberate compromise for ease of use over security.
+    # For increased security, set to true to disable public IP access
+    enablePrivateEndpoint: true
+    # Default to private nodes (no public IP)
+    enablePrivateNodes: true
+    # Enable global access to the GKE control plane's internal loab balancer.
+    # https://cloud.google.com/load-balancing/docs/internal/setting-up-internal#ilb-global-access
+    masterGlobalAccessConfig:
+      enabled: true
+    masterIpv4CidrBlock: 10.254.0.0/28
+
+  masterAuthorizedNetworksConfig:
+    cidrBlocks:
+      - cidrBlock: 10.2.0.0/16
+        displayName: Authorized networks
+
+  addonsConfig:
+    configConnectorConfig:
+      enabled: false
+    dnsCacheConfig:
+      enabled: false
+    gcePersistentDiskCsiDriverConfig:
+      enabled: false
+    horizontalPodAutoscaling:
+      disabled: true
+    httpLoadBalancing:
+      disabled: false
+    kalmConfig:
+      enabled: false
+    networkPolicyConfig:
+      disabled: true
+
+  verticalPodAutoscaling:
+    enabled: true
+  identityServiceConfig:
+    enabled: true
+  workloadIdentityConfig:
+    workloadPool: apples-123.svc.id.goog
+  enableIntranodeVisibility: true
+
+  binaryAuthorization:
+    evaluationMode: 2

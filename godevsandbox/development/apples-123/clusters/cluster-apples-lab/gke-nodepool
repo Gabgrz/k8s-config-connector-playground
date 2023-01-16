@@ -1,0 +1,33 @@
+# Source: cluster-apples/charts/gke-safenodepool/templates/nodepool.yaml
+apiVersion: container.cnrm.cloud.google.com/v1beta1
+kind: ContainerNodePool
+metadata:
+  labels:
+    label-one: "value-one"
+  name: encrypted-nodepool-lab
+  namespace: apples-123
+spec:
+  location: us-west1-a
+  autoscaling:
+    minNodeCount: 1
+    maxNodeCount: 1
+  nodeConfig:
+    machineType: n1-standard-1
+    diskSizeGb: 100
+    diskType: pd-standard
+    tags:
+      - tagone
+      - tagtwo
+    preemptible: false
+    oauthScopes:
+      - "https://www.googleapis.com/auth/logging.write"
+      - "https://www.googleapis.com/auth/monitoring"
+    metadata:
+      disable-legacy-endpoints: "true"
+    bootDiskKMSCryptoKeyRef:
+      external: projects/nth-subset-372600/locations/us-west1/keyRings/kmskeyring-sample/cryptoKeys/kmscryptokey-sample
+  management:
+    autoRepair: true
+    autoUpgrade: true
+  clusterRef:
+    name: gke-cluster-dev

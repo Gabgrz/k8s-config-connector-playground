@@ -1,0 +1,15 @@
+dependencies:
+- name: vpc-subnet
+  repository: https://gabgrz.github.io/helm-charts/
+  version: 0.1.4
+- name: gke-standard
+  repository: https://gabgrz.github.io/helm-charts/
+  version: 0.3.7
+- name: gke-nodepool
+  repository: https://gabgrz.github.io/helm-charts/
+  version: 0.1.2
+- name: gke-nodepool
+  repository: https://gabgrz.github.io/helm-charts/
+  version: 0.1.4
+digest: sha256:80c608db60cd874ff0dc8b801da5ca8757d34d87965faab747991d13026d72a3
+generated: "2023-01-16T16:59:48.005561-06:00"
