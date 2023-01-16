@@ -62,5 +62,4 @@ spec:
     workloadPool: apples-123.svc.id.goog
   enableIntranodeVisibility: true
 
-  binaryAuthorization:
-    enabled: true
+  enableBinaryAuthorization: true
