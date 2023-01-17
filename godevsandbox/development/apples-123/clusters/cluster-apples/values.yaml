@@ -67,4 +67,4 @@ gke-safenodepool-2:
       bootDiskKMSCryptoKeyRef: "projects/nth-subset-372600/locations/us-west1/keyRings/kmskeyring-sample/cryptoKeys/kmscryptokey-sample"
       enableSecureBoot: true
       enableIntegrityMonitoring: true
-      serviceAccountRef: folder-admin@nth-subset-372600.iam.gserviceaccount.com
+      serviceAccountRef: custom-gce-sa@apples-123.iam.gserviceaccount.com

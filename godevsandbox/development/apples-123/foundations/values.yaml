@@ -8,3 +8,11 @@ services:
     - container.googleapis.com
     - binaryauthorization.googleapis.com
     - cloudkms.googleapis.com
+
+iam-service-account:
+  principals:
+    custom-gce-sa:
+      create: true
+      displayName: Custom GCE Service Account
+      projectRoles:
+        - editor
