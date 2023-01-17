@@ -9,7 +9,7 @@ services:
     - binaryauthorization.googleapis.com
     - cloudkms.googleapis.com
 
-iam-service-account:
+iam-service-accounts:
   principals:
     custom-gce-sa:
       create: true
