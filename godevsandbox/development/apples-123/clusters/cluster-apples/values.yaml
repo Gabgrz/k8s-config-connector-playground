@@ -24,6 +24,7 @@ gke-standard:
       cidrBlock: 10.2.0.0/16
       displayName: 'Authorized networks'
     enableIntranodeVisibility: true
+    enableBinaryAuthorization: true
     
 # Node pool 1 configuration
 gke-nodepool:
@@ -50,3 +51,21 @@ gke-safenodepool:
       diskType:
       diskSizeGb:
       bootDiskKMSCryptoKeyRef: "projects/nth-subset-372600/locations/us-west1/keyRings/kmskeyring-sample/cryptoKeys/kmscryptokey-sample"
+
+# Node pool 3 configuration
+gke-safenodepool-2:
+  nodePool:
+    name: encrypted-nodepool-2
+    location: us-west1-a
+    autoscaling:
+      minNodeCount: 1
+      maxNodeCount: 1
+    nodeConfig:
+      machineType: n1-standard-2
+      diskType: pd-standard
+      diskSizeGb: 50
+      bootDiskKMSCryptoKeyRef: "projects/nth-subset-372600/locations/us-west1/keyRings/kmskeyring-sample/cryptoKeys/kmscryptokey-sample"
+      shieldedInstanceConfig:
+        enableSecureBoot: true
+        enableIntegrityMonitoring: true
+      serviceAccountRef: folder-admin@nth-subset-372600.iam.gserviceaccount.com
