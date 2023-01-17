@@ -18,6 +18,6 @@ dependencies:
     repository: "https://gabgrz.github.io/helm-charts/"
     alias: gke-safenodepool
   - name: gke-nodepool
-    version: "0.1.6"
+    version: "0.1.7"
     repository: "https://gabgrz.github.io/helm-charts/"
     alias: gke-safenodepool-2
