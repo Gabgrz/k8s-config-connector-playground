@@ -65,7 +65,6 @@ gke-safenodepool-2:
       diskType: pd-standard
       diskSizeGb: 50
       bootDiskKMSCryptoKeyRef: "projects/nth-subset-372600/locations/us-west1/keyRings/kmskeyring-sample/cryptoKeys/kmscryptokey-sample"
-      shieldedInstanceConfig:
-        enableSecureBoot: true
-        enableIntegrityMonitoring: true
+      enableSecureBoot: true
+      enableIntegrityMonitoring: true
       serviceAccountRef: folder-admin@nth-subset-372600.iam.gserviceaccount.com
