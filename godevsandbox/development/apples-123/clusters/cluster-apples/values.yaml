@@ -68,3 +68,23 @@ gke-safenodepool-2:
       enableSecureBoot: true
       enableIntegrityMonitoring: true
       serviceAccountRef: custom-gce-sa@apples-123.iam.gserviceaccount.com
+
+# Node pool 4 configuration
+gke-safenodepool-4:
+  nodePool:
+    name: encrypted-nodepool-4
+    location: us-west1-a
+    autoscaling:
+      minNodeCount: 1
+      maxNodeCount: 1
+    nodeConfig:
+      machineType: n1-standard-2
+      diskType: pd-standard
+      diskSizeGb: 50
+      bootDiskKMSCryptoKeyRef: "projects/nth-subset-372600/locations/us-west1/keyRings/kmskeyring-sample/cryptoKeys/kmscryptokey-sample"
+      enableSecureBoot: true
+      enableIntegrityMonitoring: true
+      serviceAccountRef: custom-gce-sa@apples-123.iam.gserviceaccount.com
+      tags:
+        - oktagone
+        - oktagtwo
