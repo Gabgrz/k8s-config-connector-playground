@@ -1,6 +1,6 @@
 # Config Connector
 
-A collection of Google Cloud Config Connector (KCC) resources and Helm charts for managing GCP infrastructure as code.
+A collection of Kubernetes Config Connector (KCC) resources and Helm charts for managing GCP infrastructure as code.
 
 ## Overview
 
